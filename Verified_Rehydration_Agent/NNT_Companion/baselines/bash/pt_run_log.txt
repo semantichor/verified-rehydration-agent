@@ -1,0 +1,150 @@
+# AGT-VRA-001 bash conformance run  2026-09-18T10:08:30Z
+
+PT-ID: PT-001
+COMMAND: bash "/build/bash/baseline.sh" next_state "S0 STARTUP_READONLY" StartupComplete true
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S1 SNAPSHOT_LOCKED | from_state=S0 STARTUP_READONLY | trigger=STARTUP_COMPLETE | validator_passed=true | rule=S0+STARTUP_COMPLETE/true->S1
+
+PT-ID: PT-002
+COMMAND: bash "/build/bash/baseline.sh" next_state "S2 STRUCTURAL_VERIFIED" StructuralChecksDone true
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S3 ELIGIBLE_HEAD_SELECTED | from_state=S2 STRUCTURAL_VERIFIED | trigger=STRUCTURAL_CHECKS_DONE | validator_passed=true | rule=S2+STRUCTURAL_CHECKS_DONE/true->S3
+
+PT-ID: PT-003
+COMMAND: bash "/build/bash/baseline.sh" next_state "S3 ELIGIBLE_HEAD_SELECTED" EligibilityChecksDone true
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S4 REHYDRATED_VALIDATED | from_state=S3 ELIGIBLE_HEAD_SELECTED | trigger=ELIGIBILITY_CHECKS_DONE | validator_passed=true | rule=S3+ELIGIBILITY_CHECKS_DONE/true->S4
+
+PT-ID: PT-004
+COMMAND: bash "/build/bash/baseline.sh" next_state "S2 STRUCTURAL_VERIFIED" StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S5 FAIL_SAFE | from_state=S2 STRUCTURAL_VERIFIED | trigger=STRUCTURAL_CHECKS_DONE | validator_passed=false | rule=S2+STRUCTURAL_CHECKS_DONE/false->S5
+
+PT-ID: PT-005
+COMMAND: bash "/build/bash/baseline.sh" next_state "S2 STRUCTURAL_VERIFIED" StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S5 FAIL_SAFE | from_state=S2 STRUCTURAL_VERIFIED | trigger=STRUCTURAL_CHECKS_DONE | validator_passed=false | rule=S2+STRUCTURAL_CHECKS_DONE/false->S5
+
+PT-ID: PT-006
+COMMAND: bash "/build/bash/baseline.sh" next_state "S2 STRUCTURAL_VERIFIED" StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S5 FAIL_SAFE | from_state=S2 STRUCTURAL_VERIFIED | trigger=STRUCTURAL_CHECKS_DONE | validator_passed=false | rule=S2+STRUCTURAL_CHECKS_DONE/false->S5
+
+PT-ID: PT-007
+COMMAND: bash "/build/bash/baseline.sh" next_state "S2 STRUCTURAL_VERIFIED" StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S5 FAIL_SAFE | from_state=S2 STRUCTURAL_VERIFIED | trigger=STRUCTURAL_CHECKS_DONE | validator_passed=false | rule=S2+STRUCTURAL_CHECKS_DONE/false->S5
+
+PT-ID: PT-008
+COMMAND: bash "/build/bash/baseline.sh" next_state "S3 ELIGIBLE_HEAD_SELECTED" EligibilityChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S5 FAIL_SAFE | from_state=S3 ELIGIBLE_HEAD_SELECTED | trigger=ELIGIBILITY_CHECKS_DONE | validator_passed=false | rule=S3+ELIGIBILITY_CHECKS_DONE/false->S5
+
+PT-ID: PT-009
+COMMAND: bash "/build/bash/baseline.sh" next_state "S3 ELIGIBLE_HEAD_SELECTED" EligibilityChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S5 FAIL_SAFE | from_state=S3 ELIGIBLE_HEAD_SELECTED | trigger=ELIGIBILITY_CHECKS_DONE | validator_passed=false | rule=S3+ELIGIBILITY_CHECKS_DONE/false->S5
+
+PT-ID: PT-010
+COMMAND: bash "/build/bash/baseline.sh" next_state "S0 STARTUP_READONLY" StartupComplete false
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S5 FAIL_SAFE | from_state=S0 STARTUP_READONLY | trigger=STARTUP_COMPLETE | validator_passed=false | rule=S0+STARTUP_COMPLETE/false->S5
+
+PT-ID: PT-011
+COMMAND: bash "/build/bash/baseline.sh" next_state "S3 ELIGIBLE_HEAD_SELECTED" RollbackDetected true
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S5 FAIL_SAFE | from_state=S3 ELIGIBLE_HEAD_SELECTED | trigger=ROLLBACK_DETECTED | validator_passed=true | rule=rollback-priority->S5
+
+PT-ID: PT-012
+COMMAND: bash "/build/bash/baseline.sh" next_state "S5 FAIL_SAFE" WalReplayNeeded true
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S7 RECOVERY_REPLAY | from_state=S5 FAIL_SAFE | trigger=WAL_REPLAY_NEEDED | validator_passed=true | rule=S5+WAL_REPLAY_NEEDED/true->S7
+
+PT-ID: PT-013
+COMMAND: bash "/build/bash/baseline.sh" next_state "S3 ELIGIBLE_HEAD_SELECTED" ToolStateInvalid true
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S6 TOOL_QUARANTINE | from_state=S3 ELIGIBLE_HEAD_SELECTED | trigger=TOOL_STATE_INVALID | validator_passed=true | rule=S3+TOOL_STATE_INVALID/true->S6
+
+PT-ID: PT-014
+COMMAND: bash "/build/bash/baseline.sh" next_state "S3 ELIGIBLE_HEAD_SELECTED" ToolStateInvalid true
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S6 TOOL_QUARANTINE | from_state=S3 ELIGIBLE_HEAD_SELECTED | trigger=TOOL_STATE_INVALID | validator_passed=true | rule=S3+TOOL_STATE_INVALID/true->S6
+COMMAND: bash "/build/bash/baseline.sh" next_state "S3 ELIGIBLE_HEAD_SELECTED" EligibilityChecksDone true
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S4 REHYDRATED_VALIDATED | from_state=S3 ELIGIBLE_HEAD_SELECTED | trigger=ELIGIBILITY_CHECKS_DONE | validator_passed=true | rule=S3+ELIGIBILITY_CHECKS_DONE/true->S4
+
+PT-ID: PT-015
+COMMAND: bash "/build/bash/baseline.sh" next_state "S6 TOOL_QUARANTINE" StartupComplete true
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S6 TOOL_QUARANTINE | from_state=S6 TOOL_QUARANTINE | trigger=STARTUP_COMPLETE | validator_passed=true | rule=S6-isolated-terminal->S6
+
+PT-ID: PT-016
+COMMAND: bash "/build/bash/baseline.sh" evidence deny-chain
+EXIT_CODE: 0
+STDOUT_TAIL: evidence_bundle: class=deny-chain|verdict=DENY|validator_bundle_id=VB-0001|verified_head_digest=sha256:head-0001|accepted_head_digest=sha256:acc-0001|snapshot_id=SNAP-0001|policy_id=POL-0001|source_id=SRC-0001|freshness_value=42|irr_digest=IRR-0001|failed_validator=V_CHAIN|failure_code=CHAIN_BREAK|suppression_status=suppressed|tool_activation_status=inactive|validator_bundle_id_producer=ExecutionLayer|verified_head_digest_producer=V_CHAIN|snapshot_id_producer=V_SNAPSHOT|policy_id_producer=V_POLICY|source_freshness_producer=V_FRESHNESS|irr_digest_producer=V_IRR|failure_explanation_producer=GateLogic|tool_activation_status_producer=ToolGate
+
+PT-ID: PT-017
+COMMAND: bash "/build/bash/baseline.sh" evidence deny-freshness
+EXIT_CODE: 0
+STDOUT_TAIL: evidence_bundle: class=deny-freshness|verdict=DENY|validator_bundle_id=VB-0001|verified_head_digest=sha256:head-0001|accepted_head_digest=sha256:acc-0001|snapshot_id=SNAP-0001|policy_id=POL-0001|source_id=SRC-0001|freshness_value=42|irr_digest=IRR-0001|failed_validator=V_FRESHNESS|failure_code=FRESHNESS_DOWNGRADE|suppression_status=suppressed|tool_activation_status=inactive|validator_bundle_id_producer=ExecutionLayer|verified_head_digest_producer=V_CHAIN|snapshot_id_producer=V_SNAPSHOT|policy_id_producer=V_POLICY|source_freshness_producer=V_FRESHNESS|irr_digest_producer=V_IRR|failure_explanation_producer=GateLogic|tool_activation_status_producer=ToolGate
+
+PT-ID: PT-018
+COMMAND: bash "/build/bash/baseline.sh" evidence deny-parse
+EXIT_CODE: 0
+STDOUT_TAIL: evidence_bundle: class=deny-parse|verdict=DENY|validator_bundle_id=VB-0001|verified_head_digest=sha256:head-0001|accepted_head_digest=sha256:acc-0001|snapshot_id=SNAP-0001|policy_id=POL-0001|source_id=SRC-0001|freshness_value=42|irr_digest=IRR-0001|failed_validator=V_PARSE|failure_code=PARSE_AMBIGUOUS|suppression_status=suppressed|tool_activation_status=inactive|validator_bundle_id_producer=ExecutionLayer|verified_head_digest_producer=V_CHAIN|snapshot_id_producer=V_SNAPSHOT|policy_id_producer=V_POLICY|source_freshness_producer=V_FRESHNESS|irr_digest_producer=V_IRR|failure_explanation_producer=GateLogic|tool_activation_status_producer=ToolGate
+
+PT-ID: PT-019
+COMMAND: bash "/build/bash/baseline.sh" evidence recovery
+EXIT_CODE: 0
+STDOUT_TAIL: evidence_bundle: class=recovery|verdict=QUARANTINE|validator_bundle_id=VB-0001|verified_head_digest=sha256:head-0001|accepted_head_digest=sha256:acc-0001|snapshot_id=SNAP-0001|policy_id=POL-0001|source_id=SRC-0001|freshness_value=42|irr_digest=IRR-0001|suppression_status=suppressed|tool_activation_status=inactive|recovery_phase=converging|validator_bundle_id_producer=ExecutionLayer|verified_head_digest_producer=V_CHAIN|snapshot_id_producer=V_SNAPSHOT|policy_id_producer=V_POLICY|source_freshness_producer=V_FRESHNESS|irr_digest_producer=V_IRR|failure_explanation_producer=GateLogic|tool_activation_status_producer=ToolGate|recovery_phase_producer=V_WAL_PHASE
+
+PT-ID: PT-020
+COMMAND: bash "/build/bash/baseline.sh" evidence readmission
+EXIT_CODE: 0
+STDOUT_TAIL: evidence_bundle: class=readmission|verdict=READMISSION_PENDING|validator_bundle_id=VB-0001|verified_head_digest=sha256:head-0001|accepted_head_digest=sha256:acc-0001|snapshot_id=SNAP-0001|policy_id=POL-0001|source_id=SRC-0001|freshness_value=42|irr_digest=IRR-0001|tool_activation_status=inactive|readmission_token_id=RDM-TOKEN-0001|validator_bundle_id_producer=ExecutionLayer|verified_head_digest_producer=V_CHAIN|snapshot_id_producer=V_SNAPSHOT|policy_id_producer=V_POLICY|source_freshness_producer=V_FRESHNESS|irr_digest_producer=V_IRR|failure_explanation_producer=GateLogic|tool_activation_status_producer=ToolGate
+
+PT-ID: PT-021
+COMMAND: bash "/build/bash/baseline.sh" evidence deny-frame
+EXIT_CODE: 0
+STDOUT_TAIL: evidence_bundle: class=deny-frame|verdict=DENY|validator_bundle_id=VB-0001|verified_head_digest=sha256:head-0001|accepted_head_digest=sha256:acc-0001|snapshot_id=SNAP-0001|policy_id=POL-0001|source_id=SRC-0001|freshness_value=42|irr_digest=IRR-0001|failed_validator=V_FRAME|failure_code=FRAME_INVALID|suppression_status=suppressed|tool_activation_status=inactive|validator_bundle_id_producer=ExecutionLayer|verified_head_digest_producer=V_CHAIN|snapshot_id_producer=V_SNAPSHOT|policy_id_producer=V_POLICY|source_freshness_producer=V_FRESHNESS|irr_digest_producer=V_IRR|failure_explanation_producer=GateLogic|tool_activation_status_producer=ToolGate
+
+PT-ID: PT-022
+COMMAND: bash "/build/bash/baseline.sh" verdict-tag QUARANTINE ; state-tag "S6 TOOL_QUARANTINE"
+EXIT_CODE: 0
+STDOUT_TAIL: verdict=verdict::QUARANTINE state=state::S6_TOOL_QUARANTINE
+
+PT-ID: PT-023
+COMMAND: bash "/build/bash/baseline.sh" verdict-tag DENY|ESCALATE|QUARANTINE
+EXIT_CODE: 0
+STDOUT_TAIL: deny=verdict::DENY escalate=verdict::ESCALATE quarantine=verdict::QUARANTINE
+
+PT-ID: PT-024
+COMMAND: bash "/build/bash/baseline.sh" next_state "S8 READMISSION_PENDING" AuthorityRelease true
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S0 STARTUP_READONLY | from_state=S8 READMISSION_PENDING | trigger=AUTHORITY_RELEASE | validator_passed=true | rule=S8+AUTHORITY_RELEASE/true->S0
+
+PT-ID: PT-025
+COMMAND: bash "/build/bash/baseline.sh" evidence deny-freshness
+EXIT_CODE: 0
+STDOUT_TAIL: evidence_bundle: class=deny-freshness|verdict=DENY|validator_bundle_id=VB-0001|verified_head_digest=sha256:head-0001|accepted_head_digest=sha256:acc-0001|snapshot_id=SNAP-0001|policy_id=POL-0001|source_id=SRC-0001|freshness_value=42|irr_digest=IRR-0001|failed_validator=V_FRESHNESS|failure_code=FRESHNESS_DOWNGRADE|suppression_status=suppressed|tool_activation_status=inactive|validator_bundle_id_producer=ExecutionLayer|verified_head_digest_producer=V_CHAIN|snapshot_id_producer=V_SNAPSHOT|policy_id_producer=V_POLICY|source_freshness_producer=V_FRESHNESS|irr_digest_producer=V_IRR|failure_explanation_producer=GateLogic|tool_activation_status_producer=ToolGate
+
+PT-ID: PT-026
+COMMAND: bash "/build/bash/baseline.sh" evidence recovery
+EXIT_CODE: 0
+STDOUT_TAIL: evidence_bundle: class=recovery|verdict=QUARANTINE|validator_bundle_id=VB-0001|verified_head_digest=sha256:head-0001|accepted_head_digest=sha256:acc-0001|snapshot_id=SNAP-0001|policy_id=POL-0001|source_id=SRC-0001|freshness_value=42|irr_digest=IRR-0001|suppression_status=suppressed|tool_activation_status=inactive|recovery_phase=converging|validator_bundle_id_producer=ExecutionLayer|verified_head_digest_producer=V_CHAIN|snapshot_id_producer=V_SNAPSHOT|policy_id_producer=V_POLICY|source_freshness_producer=V_FRESHNESS|irr_digest_producer=V_IRR|failure_explanation_producer=GateLogic|tool_activation_status_producer=ToolGate|recovery_phase_producer=V_WAL_PHASE
+
+PT-ID: PT-027
+COMMAND: bash "/build/bash/baseline.sh" next_state "S3 ELIGIBLE_HEAD_SELECTED" ToolStateInvalid true
+EXIT_CODE: 0
+STDOUT_TAIL: result_state=S6 TOOL_QUARANTINE | from_state=S3 ELIGIBLE_HEAD_SELECTED | trigger=TOOL_STATE_INVALID | validator_passed=true | rule=S3+TOOL_STATE_INVALID/true->S6
+
+PT-ID: PT-028
+COMMAND: (no invocation -- SKIP: declarative/bounded-external V_COMPAT; buyer obligation = local policy bundle binding policy_id/V_POLICY/V_COMPAT (README artifact 3; Spec §16 Local policy bundle); evidenced by the deployment policy-compatibility enforcement point (DC-01 architecture evidence), not the local projection surface)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PT-029
+COMMAND: (no invocation -- SKIP: declarative/bounded-external V_WRITER_LOCK; buyer obligation = single-writer persistence control plane emitting writer-lock/contention evidence (README artifact 4; Spec §16 Single-writer enforcement); evidenced by the persistence control plane (DC-02 architecture evidence), not the local projection surface)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+

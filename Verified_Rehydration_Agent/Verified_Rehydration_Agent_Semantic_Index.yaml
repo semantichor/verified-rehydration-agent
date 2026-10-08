@@ -1,0 +1,2078 @@
+metadata:
+  agent_name: Verified Rehydration Agent
+  agent_version: Public release v1
+  index_version: '2.0'
+  source_documents:
+  - Verified_Rehydration_Agent_Specification.md
+  derivation_scope: single-document authorized public corpus
+  publication_format:
+  - D1
+  - D2-YAML
+  - D2-JSON
+  - D3
+  - D4
+  authorized_public_corpus:
+  - Verified_Rehydration_Agent_Specification.md
+  excluded_sources_statement: Only the authorized public corpus is used for source_refs and textual attestation.
+entries:
+- term_id: ID-001
+  preferred_label: Verified Rehydration Agent
+  category: Identity Terms
+  definition_short: Canonical name of the agent defined by the public specification.
+  definition_operational: Names the agent whose role is to allow restoration only after complete verification and otherwise block, suppress, or isolate persistent context.
+  normative_status: normative
+  source_refs:
+  - Title block
+  - §2 Agent Overview
+  related_terms:
+  - AGT-VRA-001
+  - Public Library Specification
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ID-002
+  preferred_label: AGT-VRA-001
+  category: Identity Terms
+  definition_short: Agent identifier assigned in the overview table.
+  definition_operational: Provides the stable identifier for the public specification record of the agent.
+  normative_status: normative
+  source_refs:
+  - §2 Agent Overview
+  related_terms:
+  - Verified Rehydration Agent
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ID-003
+  preferred_label: Public Library Specification
+  category: Identity Terms
+  definition_short: Document type declared for the public release.
+  definition_operational: Marks the document as the buyer-facing and self-contained public specification used for semantic extraction.
+  normative_status: normative
+  source_refs:
+  - Title block
+  - §2 Agent Overview
+  related_terms:
+  - Verified Rehydration Agent
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BD-001
+  preferred_label: persistent context
+  category: Boundary Terms
+  definition_short: Persistent context subject to restoration control.
+  definition_operational: Names the persistent state whose restoration is permitted only after complete verification and otherwise remains blocked, suppressed, or isolated.
+  normative_status: normative
+  source_refs:
+  - Title block
+  - §1 Scope and Key Terms
+  - §2 Agent Overview
+  - §8 Failure Semantics
+  related_terms:
+  - validated_context
+  - Tool-state
+  - Fail-safe suppression
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - Restoration is permitted only after complete verification.
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BD-002
+  preferred_label: IRR
+  category: Boundary Terms
+  definition_short: Reception log used to prove valid intake and visibility.
+  definition_operational: Names the reception log used to prove valid intake and to anchor which head is visible and eligible for restoration.
+  normative_status: normative
+  source_refs:
+  - §1 Scope and Key Terms
+  - §4 Input Contract
+  - §7 Ordering and Verification Sequence
+  - §10 Validator Catalogue
+  - §14 Evidence Contract
+  related_terms:
+  - Head
+  - Accepted head
+  - V_IRR
+  - V_VISIBILITY
+  - irr_digest
+  synonyms:
+  - reception log
+  - IRR / reception log
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - reception log
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BD-003
+  preferred_label: Head
+  category: Boundary Terms
+  definition_short: Candidate top record or state boundary considered for restoration.
+  definition_operational: Names the candidate top record or state boundary considered for restoration before accepted visibility and full verification are established.
+  normative_status: normative
+  source_refs:
+  - §1 Scope and Key Terms
+  - §7 Ordering and Verification Sequence
+  related_terms:
+  - Accepted head
+  - verified head
+  synonyms: []
+  non_synonyms:
+  - Accepted head
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Accepted head
+  - verified head
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BD-004
+  preferred_label: Accepted head
+  category: Boundary Terms
+  definition_short: Head made eligible by a valid IRR entry and the visibility rule.
+  definition_operational: Names the head made eligible by a valid IRR entry and the visibility rule, but not yet the verified head for replay and release.
+  normative_status: normative
+  source_refs:
+  - §1 Scope and Key Terms
+  - §4 Input Contract
+  - §9 Observability Requirements
+  - §16 Precedence rules
+  related_terms:
+  - Head
+  - verified head
+  - V_VISIBILITY
+  - accepted_head_digest
+  synonyms: []
+  non_synonyms:
+  - Head
+  - verified head
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Head
+  - verified head
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BD-005
+  preferred_label: verified head
+  category: Boundary Terms
+  definition_short: Head fixed for replay and release after the required verification sequence.
+  definition_operational: Names the head selected after verification, used for replay, release, and evidence binding.
+  normative_status: normative
+  source_refs:
+  - §5 Output Contract
+  - §6 Verdict Semantics
+  - §7 Ordering and Verification Sequence
+  - §9 Observability Requirements
+  - §14 Evidence Contract
+  related_terms:
+  - Head
+  - Accepted head
+  - validated_context
+  - verified_head_digest
+  synonyms: []
+  non_synonyms:
+  - Head
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Head
+  - Accepted head
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BD-006
+  preferred_label: Tool-state
+  category: Boundary Terms
+  definition_short: Persisted capability or tool configuration state handled separately from restoration.
+  definition_operational: Names persisted capability or tool configuration state that remains separate from conversational or contextual restoration and requires a separate activation gate and approval path.
+  normative_status: normative
+  source_refs:
+  - §1 Scope and Key Terms
+  - §2 Agent Overview
+  - §4 Input Contract
+  - §8 Failure Semantics
+  - §11 Decision Logic
+  - §18 Optional Features
+  related_terms:
+  - tool_state_activation
+  - tool_activation_status
+  - Tool-state activation path
+  synonyms: []
+  non_synonyms:
+  - validated_context
+  usage_constraints:
+  - Tool-state remains untrusted and inactive unless a separate activation gate and required approval both succeed.
+  allowed_values: null
+  ambiguities:
+  - Tool-state activation path
+  - tool_state_activation
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BD-007
+  preferred_label: append-only ledger
+  category: Boundary Terms
+  definition_short: Primary persistent input used as a restoration source.
+  definition_operational: Names the append-only ledger provided as a primary input and validated for framing, checksum, canonical parse, and chain continuity before restoration.
+  normative_status: normative
+  source_refs:
+  - §2 Agent Overview
+  - §4 Input Contract
+  related_terms:
+  - V_FRAME
+  - V_CHECKSUM
+  - V_PARSE
+  - V_CHAIN
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BD-008
+  preferred_label: policy bundle
+  category: Boundary Terms
+  definition_short: Authorized policy input used for local compatibility checks.
+  definition_operational: Names the policy bundle used to verify authorized policy_id and local compatibility before restoration can be allowed.
+  normative_status: normative
+  source_refs:
+  - §2 Agent Overview
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §16 Deployment obligations
+  related_terms:
+  - policy_id
+  - V_POLICY
+  - V_COMPAT
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - policy_id
+  - V_POLICY
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BD-009
+  preferred_label: startup mount state
+  category: Boundary Terms
+  definition_short: Startup storage state before verification begins.
+  definition_operational: Names the startup mount state that must be read-only before verification begins and remains part of the trusted restoration boundary.
+  normative_status: normative
+  source_refs:
+  - §2 Agent Overview
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  related_terms:
+  - V_BOOT_MODE
+  - S0 STARTUP_READONLY
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - S0 STARTUP_READONLY
+  - V_BOOT_MODE
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: BD-010
+  preferred_label: validated_context
+  category: Boundary Terms
+  definition_short: Validated context assembled for handoff after ALLOW.
+  definition_operational: Names the restored context handed to the execution layer only after ALLOW and complete replay from the verified head.
+  normative_status: normative
+  source_refs:
+  - §5 Output Contract
+  - §12 Workflow and State Transitions
+  - §13 Gate Logic
+  related_terms:
+  - restoration_verdict
+  - ALLOW
+  - verified head
+  synonyms: []
+  non_synonyms:
+  - Tool-state
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CT-001
+  preferred_label: Fail-safe suppression
+  category: Control Terms
+  definition_short: Mandatory prevention of persistent-state injection after a blocking failure.
+  definition_operational: Names the mandatory blocking control that suppresses persistent-state injection after any blocking failure and keeps restoration fail-closed.
+  normative_status: normative
+  source_refs:
+  - §1 Scope and Key Terms
+  - §6 Verdict Semantics
+  - §8 Failure Semantics
+  - §13 Gate Logic
+  related_terms:
+  - DENY
+  - S5 FAIL_SAFE
+  - Readmission
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - Mandatory prevention of persistent-state injection after a blocking failure.
+  allowed_values: null
+  ambiguities:
+  - S5 FAIL_SAFE
+  - fail_safe_release
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CT-002
+  preferred_label: Readmission
+  category: Control Terms
+  definition_short: Controlled exit from fail-safe after recovery obligations and approval.
+  definition_operational: Names the controlled exit from fail-safe after recovery obligations are satisfied and the required authority approves release.
+  normative_status: normative
+  source_refs:
+  - §1 Scope and Key Terms
+  - §5 Output Contract
+  - §6 Verdict Semantics
+  - §13 Gate Logic
+  related_terms:
+  - readmission_request
+  - READMISSION_PENDING
+  - Readmission gate
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - Controlled exit from fail-safe after recovery obligations are satisfied and the required authority approves release.
+  allowed_values: null
+  ambiguities:
+  - readmission_request
+  - READMISSION_PENDING
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CT-003
+  preferred_label: Release gate
+  category: Control Terms
+  definition_short: Gate that permits validated_context handoff.
+  definition_operational: Names the gate that opens only when all critical validators PASS and verified context is assembled, allowing validated_context handoff.
+  normative_status: normative
+  source_refs:
+  - §9 Observability Requirements
+  - §13 Gate Logic
+  related_terms:
+  - validated_context
+  - ALLOW
+  - validator_bundle_id
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CT-004
+  preferred_label: Block gate
+  category: Control Terms
+  definition_short: Gate that suppresses restore when a critical failure is present.
+  definition_operational: Names the gate that closes autonomous restore and suppresses injection while recovery proof and authority release are still absent.
+  normative_status: normative
+  source_refs:
+  - §5 Output Contract
+  - §13 Gate Logic
+  related_terms:
+  - DENY
+  - Fail-safe suppression
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CT-005
+  preferred_label: Quarantine gate
+  category: Control Terms
+  definition_short: Gate that isolates partial artefacts during recoverable ambiguity or tool restriction.
+  definition_operational: Names the gate that isolates partial artefacts while separate closure conditions remain unsatisfied.
+  normative_status: normative
+  source_refs:
+  - §8 Failure Semantics
+  - §13 Gate Logic
+  related_terms:
+  - QUARANTINE
+  - S6 TOOL_QUARANTINE
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CT-006
+  preferred_label: Escalation gate
+  category: Control Terms
+  definition_short: Gate that halts autonomous progress when the environment, policy, or authority is deficient.
+  definition_operational: Names the gate that blocks autonomous progress until operator or policy-authority action resolves the deficiency.
+  normative_status: normative
+  source_refs:
+  - §5 Output Contract
+  - §13 Gate Logic
+  related_terms:
+  - ESCALATE
+  - startup_environment
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CT-007
+  preferred_label: Readmission gate
+  category: Control Terms
+  definition_short: Gate that controls exit from fail-safe.
+  definition_operational: Names the gate that opens only after fail-safe entry and completion of the closure bundle, and remains closed if any obligation is missing.
+  normative_status: normative
+  source_refs:
+  - §5 Output Contract
+  - §11 Decision Logic
+  - §13 Gate Logic
+  related_terms:
+  - Readmission
+  - readmission_request
+  - READMISSION_PENDING
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: CT-008
+  preferred_label: accepted-head-only rule
+  category: Control Terms
+  definition_short: Rule that limits restoration to the accepted head.
+  definition_operational: Names the precedence rule and proof requirement that restoration may not extend beyond the accepted head and that an unanchored tail remains ineligible.
+  normative_status: normative
+  source_refs:
+  - §9 Observability Requirements
+  - §16 Precedence rules
+  - §19 Reuse Note
+  related_terms:
+  - Accepted head
+  - IRR
+  - verified head
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - The accepted-head-only rule prevails over any local continuity of an unanchored tail.
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DE-001
+  preferred_label: restoration_request
+  category: Decision Terms
+  definition_short: Decision object for the principal restoration rule.
+  definition_operational: Names the decision object that yields ALLOW when all critical validators PASS and yields DENY when a critical validator fails.
+  normative_status: normative
+  source_refs:
+  - §2 Agent Overview
+  - §11 Decision Logic
+  related_terms:
+  - ALLOW
+  - DENY
+  - validator_bundle_id
+  - verified_head_digest
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DE-002
+  preferred_label: import_admissibility
+  category: Decision Terms
+  definition_short: Decision object for freshness and policy acceptance of imported context.
+  definition_operational: Names the decision object that denies acceptance and restore when freshness is not strictly greater or policy is incompatible.
+  normative_status: normative
+  source_refs:
+  - §2 Agent Overview
+  - §11 Decision Logic
+  related_terms:
+  - DENY
+  - source_id
+  - policy_id
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DE-003
+  preferred_label: verified_head_selection
+  category: Decision Terms
+  definition_short: Decision object for accepted and visible head selection.
+  definition_operational: Names the decision object that denies restoration when IRR is invalid or visibility is unsatisfied and keeps the tail ineligible.
+  normative_status: normative
+  source_refs:
+  - §2 Agent Overview
+  - §11 Decision Logic
+  related_terms:
+  - Accepted head
+  - DENY
+  - V_IRR
+  - V_VISIBILITY
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DE-004
+  preferred_label: tool_state_activation
+  category: Decision Terms
+  definition_short: Decision object for tool-state release or isolation.
+  definition_operational: Names the decision object that quarantines tool-state when schema, allow-list, or approval requirements are not satisfied.
+  normative_status: normative
+  source_refs:
+  - §2 Agent Overview
+  - §11 Decision Logic
+  related_terms:
+  - Tool-state
+  - QUARANTINE
+  - tool_activation_status
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Tool-state
+  - Tool-state activation path
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DE-005
+  preferred_label: fail_safe_release
+  category: Decision Terms
+  definition_short: Decision object listed for controlled release from fail-safe.
+  definition_operational: Names the fail-safe release decision object listed in the agent overview and bounded by the readmission controls and authority release path.
+  normative_status: normative
+  source_refs:
+  - §2 Agent Overview
+  - §13 Gate Logic
+  related_terms:
+  - Readmission
+  - Readmission gate
+  - authority_release
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Fail-safe suppression
+  - S5 FAIL_SAFE
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DE-006
+  preferred_label: readmission_request
+  category: Decision Terms
+  definition_short: Decision object for authorized exit from fail-safe.
+  definition_operational: Names the decision object that transitions READMISSION_PENDING to ALLOW only after recovery obligations are satisfied and authority approves.
+  normative_status: normative
+  source_refs:
+  - §2 Agent Overview
+  - §11 Decision Logic
+  related_terms:
+  - READMISSION_PENDING
+  - ALLOW
+  - Readmission gate
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Readmission
+  - READMISSION_PENDING
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DE-007
+  preferred_label: recovery_replay
+  category: Decision Terms
+  definition_short: Decision object for recoverable WAL ambiguity.
+  definition_operational: Names the decision object that yields QUARANTINE when WAL phase ambiguity is recoverable and blocks release before convergence is proven.
+  normative_status: normative
+  source_refs:
+  - §11 Decision Logic
+  related_terms:
+  - QUARANTINE
+  - WAL
+  - recovery_phase
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - WAL
+  - S7 RECOVERY_REPLAY
+  - recovery_phase
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DE-008
+  preferred_label: startup_environment
+  category: Decision Terms
+  definition_short: Decision object for startup trustworthiness.
+  definition_operational: Names the decision object that yields ESCALATE when boot mode is not read-only or the snapshot is unstable.
+  normative_status: normative
+  source_refs:
+  - §11 Decision Logic
+  related_terms:
+  - ESCALATE
+  - V_BOOT_MODE
+  - V_SNAPSHOT
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DE-009
+  preferred_label: restoration_verdict
+  category: Decision Terms
+  definition_short: Final verdict emitted for restoration handling.
+  definition_operational: Names the final verdict output that binds the restoration decision to validator results, head selection, snapshot context, and failure signaling.
+  normative_status: normative
+  source_refs:
+  - §2 Agent Overview
+  - §5 Output Contract
+  - §6 Verdict Semantics
+  - §15 Machine-Readable Forms
+  related_terms:
+  - ALLOW
+  - DENY
+  - QUARANTINE
+  - ESCALATE
+  - READMISSION_PENDING
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values:
+  - ALLOW
+  - DENY
+  - QUARANTINE
+  - ESCALATE
+  - READMISSION_PENDING
+  ambiguities:
+  - restoration_request
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DE-010
+  preferred_label: ALLOW
+  category: Decision Terms
+  definition_short: Normative verdict permitting restoration.
+  definition_operational: Means restoration may be executed only from the verified head and only for the context declared eligible.
+  normative_status: normative
+  source_refs:
+  - §5 Output Contract
+  - §6 Verdict Semantics
+  - §11 Decision Logic
+  related_terms:
+  - restoration_verdict
+  - validated_context
+  - verified head
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - ALLOW means restoration may be executed only from the verified head and only for the context declared eligible.
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DE-011
+  preferred_label: DENY
+  category: Decision Terms
+  definition_short: Normative verdict blocking restoration.
+  definition_operational: Means no persistent state is injected and the blocking reason remains explicit in the evidence and gate outputs.
+  normative_status: normative
+  source_refs:
+  - §5 Output Contract
+  - §6 Verdict Semantics
+  - §11 Decision Logic
+  related_terms:
+  - restoration_verdict
+  - failure_code
+  - Fail-safe suppression
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - DENY means no persistent state is injected.
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DE-012
+  preferred_label: QUARANTINE
+  category: Decision Terms
+  definition_short: Normative verdict isolating artefacts or state portions.
+  definition_operational: Means artefacts or state portions remain isolated and non-executable until the required closure conditions are met.
+  normative_status: normative
+  source_refs:
+  - §6 Verdict Semantics
+  - §8 Failure Semantics
+  - §11 Decision Logic
+  related_terms:
+  - Quarantine gate
+  - S6 TOOL_QUARANTINE
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - QUARANTINE means artefacts or state portions remain isolated and non-executable.
+  allowed_values: null
+  ambiguities:
+  - S6 TOOL_QUARANTINE
+  - MRF-TOOL-QUARANTINE
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DE-013
+  preferred_label: ESCALATE
+  category: Decision Terms
+  definition_short: Normative verdict requiring operator or policy-authority intervention.
+  definition_operational: Means operator or policy-authority intervention is required because the verification environment, policy, or authority conditions are not trustworthy or not sufficient.
+  normative_status: normative
+  source_refs:
+  - §5 Output Contract
+  - §6 Verdict Semantics
+  - §8 Failure Semantics
+  - §11 Decision Logic
+  related_terms:
+  - Escalation gate
+  - startup_environment
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - ESCALATE means operator or policy-authority intervention is required.
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: DE-014
+  preferred_label: READMISSION_PENDING
+  category: Decision Terms
+  definition_short: Normative verdict showing fail-safe closure is still incomplete.
+  definition_operational: Means a fail-safe state has not yet been closed through the required readmission conditions.
+  normative_status: normative
+  source_refs:
+  - §6 Verdict Semantics
+  - §11 Decision Logic
+  related_terms:
+  - readmission_request
+  - Readmission gate
+  - S8 READMISSION_PENDING
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - S8 READMISSION_PENDING
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-001
+  preferred_label: V_FRAME
+  category: Validation Terms
+  definition_short: Verifies record framing structure and boundaries.
+  definition_operational: 'Names the validator that verifies record framing structure and boundaries and whose failure produces DENY. Minimum evidence: frame_status, frame_offset. Severity: critical.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-002
+  preferred_label: V_CHECKSUM
+  category: Validation Terms
+  definition_short: Verifies frame checksum.
+  definition_operational: 'Names the validator that verifies frame checksum and whose failure produces DENY. Minimum evidence: checksum_status. Severity: critical.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-003
+  preferred_label: V_PARSE
+  category: Validation Terms
+  definition_short: Verifies unambiguous canonical parsing.
+  definition_operational: 'Names the validator that verifies unambiguous canonical parsing and whose failure produces DENY. Minimum evidence: parse_status, canonical_form_id. Severity: critical.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-004
+  preferred_label: V_CHAIN
+  category: Validation Terms
+  definition_short: Verifies hash-chain continuity.
+  definition_operational: 'Names the validator that verifies hash-chain continuity and whose failure produces DENY. Minimum evidence: prior_digest, current_digest, chain_status. Severity: critical.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-005
+  preferred_label: V_SIG
+  category: Validation Terms
+  definition_short: Verifies signatures and the permitted cryptographic profile.
+  definition_operational: 'Names the validator that verifies signatures and the permitted cryptographic profile and whose failure produces DENY. Minimum evidence: key_id, sig_status, alg_profile. Severity: critical.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-006
+  preferred_label: V_FRESHNESS
+  category: Validation Terms
+  definition_short: Verifies strict increase against the local watermark.
+  definition_operational: 'Names the validator that verifies strict increase against the local watermark and whose failure produces DENY. Minimum evidence: source_id, accepted_freshness, candidate_freshness. Severity: critical.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-007
+  preferred_label: V_POLICY
+  category: Validation Terms
+  definition_short: Verifies policy_id and local policy compatibility.
+  definition_operational: 'Names the validator that verifies policy_id and local policy compatibility and whose failure produces DENY. Minimum evidence: policy_id, compat_status. Severity: critical.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-008
+  preferred_label: V_COMPAT
+  category: Validation Terms
+  definition_short: Verifies deployment-policy compatibility.
+  definition_operational: 'Names the validator that verifies deployment-policy compatibility and whose failure produces DENY. Minimum evidence: deployment_profile, compat_status. Severity: critical.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-009
+  preferred_label: V_IRR
+  category: Validation Terms
+  definition_short: Verifies IRR existence and validity.
+  definition_operational: 'Names the validator that verifies irr existence and validity and whose failure produces DENY. Minimum evidence: irr_digest, irr_status. Severity: critical.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-010
+  preferred_label: V_VISIBILITY
+  category: Validation Terms
+  definition_short: Selects only the accepted and visible head.
+  definition_operational: 'Names the validator that selects only the accepted and visible head and whose failure produces DENY. Minimum evidence: accepted_head_digest. Severity: critical.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-011
+  preferred_label: V_BOOT_MODE
+  category: Validation Terms
+  definition_short: Verifies startup remount as read-only.
+  definition_operational: 'Names the validator that verifies startup remount as read-only and whose failure produces ESCALATE. Minimum evidence: mount_mode. Severity: critical.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-012
+  preferred_label: V_SNAPSHOT
+  category: Validation Terms
+  definition_short: Verifies binding to a stable snapshot.
+  definition_operational: 'Names the validator that verifies binding to a stable snapshot and whose failure produces DENY. Minimum evidence: snapshot_id, fd_binding_digest. Severity: critical.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-013
+  preferred_label: V_WAL_PHASE
+  category: Validation Terms
+  definition_short: Verifies coherence of PREPARE / ANCHOR / APPEND / COMMIT markers.
+  definition_operational: 'Names the validator that verifies coherence of prepare / anchor / append / commit markers and whose failure produces QUARANTINE. Minimum evidence: wal_phase. Severity: high.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-014
+  preferred_label: V_COUNTER_CONT
+  category: Validation Terms
+  definition_short: Verifies counter monotonicity and continuity.
+  definition_operational: 'Names the validator that verifies counter monotonicity and continuity and whose failure produces DENY. Minimum evidence: counter_value, anchor_digest. Severity: critical.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-015
+  preferred_label: V_TOOL_SCHEMA
+  category: Validation Terms
+  definition_short: Verifies tool-state schema.
+  definition_operational: 'Names the validator that verifies tool-state schema and whose failure produces tool_quarantine. Minimum evidence: tool_schema_status. Severity: medium.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-016
+  preferred_label: V_TOOL_ALLOWLIST
+  category: Validation Terms
+  definition_short: Verifies the allow-list and capability ceiling.
+  definition_operational: 'Names the validator that verifies the allow-list and capability ceiling and whose failure produces tool_quarantine. Minimum evidence: tool_id, allow_status. Severity: medium.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-017
+  preferred_label: V_WRITER_LOCK
+  category: Validation Terms
+  definition_short: Verifies single-writer discipline.
+  definition_operational: 'Names the validator that verifies single-writer discipline and whose failure produces ESCALATE. Minimum evidence: writer_lock_status, contention_status. Severity: high.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: VA-018
+  preferred_label: V_ANCHOR
+  category: Validation Terms
+  definition_short: Verifies the anti-rollback anchor.
+  definition_operational: 'Names the validator that verifies the anti-rollback anchor and whose failure produces DENY. Minimum evidence: anchor_status. Severity: critical.'
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §11 Decision Logic
+  related_terms:
+  - validator_bundle_id
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EV-001
+  preferred_label: validator_bundle_id
+  category: Evidence Terms
+  definition_short: Evidence field binding the results of all validators.
+  definition_operational: Identifies the bundle that binds the results of every critical validator and supports verdict emission and offline reconstruction.
+  normative_status: normative
+  source_refs:
+  - §5 Output Contract
+  - §9 Observability Requirements
+  - §14 Evidence Contract
+  related_terms:
+  - restoration_verdict
+  - V_FRAME
+  - V_ANCHOR
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EV-002
+  preferred_label: verified_head_digest
+  category: Evidence Terms
+  definition_short: Evidence field identifying the verified head for replay.
+  definition_operational: Provides the digest of the verified head used for replay, release, and accepted-head-only proof.
+  normative_status: normative
+  source_refs:
+  - §5 Output Contract
+  - §9 Observability Requirements
+  - §14 Evidence Contract
+  - §15 Machine-Readable Forms
+  related_terms:
+  - verified head
+  - V_CHAIN
+  - V_VISIBILITY
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EV-003
+  preferred_label: accepted_head_digest
+  category: Evidence Terms
+  definition_short: Evidence field identifying the accepted and visible head.
+  definition_operational: Provides the digest that proves accepted-head visibility and supports release-gate observability.
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §9 Observability Requirements
+  related_terms:
+  - Accepted head
+  - V_VISIBILITY
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EV-004
+  preferred_label: snapshot_id
+  category: Evidence Terms
+  definition_short: Evidence field identifying the verification-time snapshot context.
+  definition_operational: Provides the stable snapshot identifier used to bind verification, replay, and offline reconstruction to the same snapshot context.
+  normative_status: normative
+  source_refs:
+  - §5 Output Contract
+  - §10 Validator Catalogue
+  - §14 Evidence Contract
+  - §15 Machine-Readable Forms
+  related_terms:
+  - V_SNAPSHOT
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - Replay uses only the same snapshot context in which the head was validated.
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EV-005
+  preferred_label: policy_id
+  category: Evidence Terms
+  definition_short: Evidence field identifying the locally applied policy.
+  definition_operational: Names the policy identifier used in compatibility checks and recorded in the verdict evidence bundle.
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §5 Output Contract
+  - §10 Validator Catalogue
+  - §14 Evidence Contract
+  related_terms:
+  - policy bundle
+  - V_POLICY
+  - V_COMPAT
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - policy bundle
+  - V_POLICY
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EV-006
+  preferred_label: irr_digest
+  category: Evidence Terms
+  definition_short: Evidence field linking the decision to valid reception.
+  definition_operational: Provides the digest that links the restoration decision to valid IRR handling and accepted intake.
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §10 Validator Catalogue
+  - §14 Evidence Contract
+  related_terms:
+  - IRR
+  - V_IRR
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - IRR
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EV-007
+  preferred_label: failure_code
+  category: Evidence Terms
+  definition_short: Evidence field explaining denial or escalation.
+  definition_operational: Provides the explicit failure code used to explain DENY or ESCALATE and to keep blocking decisions observable and reconstructable.
+  normative_status: normative
+  source_refs:
+  - §5 Output Contract
+  - §9 Observability Requirements
+  - §14 Evidence Contract
+  - §15 Machine-Readable Forms
+  related_terms:
+  - DENY
+  - ESCALATE
+  - failed_validator
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EV-008
+  preferred_label: tool_activation_status
+  category: Evidence Terms
+  definition_short: Evidence field separating restoration from tool-state activation.
+  definition_operational: Shows whether tool-state activation remains inactive, quarantined, or otherwise separately gated from conversational restoration.
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §9 Observability Requirements
+  - §14 Evidence Contract
+  related_terms:
+  - Tool-state
+  - tool_state_activation
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EV-009
+  preferred_label: recovery_phase
+  category: Evidence Terms
+  definition_short: Evidence field showing WAL recovery and convergence state.
+  definition_operational: Shows the current recovery phase so that convergence, replay sufficiency, and readmission control remain observable.
+  normative_status: normative
+  source_refs:
+  - §4 Input Contract
+  - §9 Observability Requirements
+  - §14 Evidence Contract
+  related_terms:
+  - WAL
+  - S7 RECOVERY_REPLAY
+  - recovery_replay
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - WAL
+  - S7 RECOVERY_REPLAY
+  - wal_replay_needed
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EV-010
+  preferred_label: writer_lock_status
+  category: Evidence Terms
+  definition_short: Evidence field showing single-writer enforcement at relevant control points.
+  definition_operational: Shows writer-lock and contention state so that single-writer discipline remains observable during restore and mutation control.
+  normative_status: normative
+  source_refs:
+  - §9 Observability Requirements
+  - §10 Validator Catalogue
+  - §14 Evidence Contract
+  - §16 Deployment obligations
+  related_terms:
+  - V_WRITER_LOCK
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EV-011
+  preferred_label: source_id
+  category: Evidence Terms
+  definition_short: Evidence field identifying the source under freshness evaluation.
+  definition_operational: Names the source identifier used in freshness verification and in machine-readable restore requests.
+  normative_status: normative
+  source_refs:
+  - §11 Decision Logic
+  - §14 Evidence Contract
+  - §15 Machine-Readable Forms
+  related_terms:
+  - V_FRESHNESS
+  - MRF-RESTORE-REQ
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EV-012
+  preferred_label: freshness_value
+  category: Evidence Terms
+  definition_short: Evidence field recording source freshness in the minimum bundle.
+  definition_operational: Names the freshness value used to track source freshness in the minimum evidence bundle for the principal verdict.
+  normative_status: normative
+  source_refs:
+  - §14 Evidence Contract
+  related_terms:
+  - V_FRESHNESS
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EV-013
+  preferred_label: failed_validator
+  category: Evidence Terms
+  definition_short: Evidence field naming the validator that failed.
+  definition_operational: Names the failed validator used to explain DENY or ESCALATE and to preserve explicit failure reasons.
+  normative_status: normative
+  source_refs:
+  - §5 Output Contract
+  - §9 Observability Requirements
+  - §14 Evidence Contract
+  related_terms:
+  - failure_code
+  - DENY
+  - ESCALATE
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EV-014
+  preferred_label: suppression_status
+  category: Evidence Terms
+  definition_short: Evidence field recording suppression handling after blocking failure.
+  definition_operational: Names the suppression status carried with denial signaling and fail-safe handling after a blocking failure.
+  normative_status: normative
+  source_refs:
+  - §5 Output Contract
+  - §14 Evidence Contract
+  related_terms:
+  - Fail-safe suppression
+  - DENY
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: EV-015
+  preferred_label: readmission_token_id
+  category: Evidence Terms
+  definition_short: Evidence field identifying readmission token issuance where applicable.
+  definition_operational: Names the readmission token identifier carried in the minimum evidence bundle when readmission token issuance is applicable.
+  normative_status: normative
+  source_refs:
+  - §14 Evidence Contract
+  related_terms:
+  - Readmission
+  - MRF-READMISSION
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ST-001
+  preferred_label: S0 STARTUP_READONLY
+  category: State Terms
+  definition_short: Storage remounted read-only; no restore permitted.
+  definition_operational: 'Names the workflow state in which storage remounted read-only; no restore permitted. Exit condition: Snapshot locked.'
+  normative_status: normative
+  source_refs:
+  - §12 Workflow and State Transitions
+  related_terms:
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ST-002
+  preferred_label: S1 SNAPSHOT_LOCKED
+  category: State Terms
+  definition_short: Stable verification context established.
+  definition_operational: 'Names the workflow state in which stable verification context established. Exit condition: Structural validation finished.'
+  normative_status: normative
+  source_refs:
+  - §12 Workflow and State Transitions
+  related_terms:
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ST-003
+  preferred_label: S2 STRUCTURAL_VERIFIED
+  category: State Terms
+  definition_short: Framing, checksum, parse, chain, and signature validation succeeded.
+  definition_operational: 'Names the workflow state in which framing, checksum, parse, chain, and signature validation succeeded. Exit condition: Policy, freshness, IRR, and visibility verified.'
+  normative_status: normative
+  source_refs:
+  - §12 Workflow and State Transitions
+  related_terms:
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ST-004
+  preferred_label: S3 ELIGIBLE_HEAD_SELECTED
+  category: State Terms
+  definition_short: Accepted visible head fixed.
+  definition_operational: 'Names the workflow state in which accepted visible head fixed. Exit condition: Replay completed.'
+  normative_status: normative
+  source_refs:
+  - §12 Workflow and State Transitions
+  related_terms:
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ST-005
+  preferred_label: S4 REHYDRATED_VALIDATED
+  category: State Terms
+  definition_short: Validated context assembled.
+  definition_operational: 'Names the workflow state in which validated context assembled. Exit condition: ALLOW emitted.'
+  normative_status: normative
+  source_refs:
+  - §12 Workflow and State Transitions
+  related_terms:
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ST-006
+  preferred_label: S5 FAIL_SAFE
+  category: State Terms
+  definition_short: Persistent context suppressed.
+  definition_operational: 'Names the workflow state in which persistent context suppressed. Exit condition: Authorized recovery path starts.'
+  normative_status: normative
+  source_refs:
+  - §12 Workflow and State Transitions
+  related_terms:
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Fail-safe suppression
+  - fail_safe_release
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ST-007
+  preferred_label: S6 TOOL_QUARANTINE
+  category: State Terms
+  definition_short: Tool-state isolated.
+  definition_operational: 'Names the workflow state in which tool-state isolated. Exit condition: Separate approval or discard.'
+  normative_status: normative
+  source_refs:
+  - §12 Workflow and State Transitions
+  related_terms:
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - QUARANTINE
+  - MRF-TOOL-QUARANTINE
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ST-008
+  preferred_label: S7 RECOVERY_REPLAY
+  category: State Terms
+  definition_short: WAL or continuity replay in progress.
+  definition_operational: 'Names the workflow state in which wal or continuity replay in progress. Exit condition: Convergence proven.'
+  normative_status: normative
+  source_refs:
+  - §12 Workflow and State Transitions
+  related_terms:
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - WAL
+  - recovery_phase
+  - wal_replay_needed
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: ST-009
+  preferred_label: S8 READMISSION_PENDING
+  category: State Terms
+  definition_short: Fail-safe exit under controlled authority.
+  definition_operational: 'Names the workflow state in which fail-safe exit under controlled authority. Exit condition: All obligations satisfied.'
+  normative_status: normative
+  source_refs:
+  - §12 Workflow and State Transitions
+  related_terms:
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - READMISSION_PENDING
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TR-001
+  preferred_label: startup_complete
+  category: Transition Terms
+  definition_short: Trigger in the transition model from S0 STARTUP_READONLY to S1 SNAPSHOT_LOCKED.
+  definition_operational: 'Names the trigger that moves the workflow from S0 STARTUP_READONLY to S1 SNAPSHOT_LOCKED when the guard V_BOOT_MODE PASS is satisfied. On failure: S5 FAIL_SAFE or ESCALATE.'
+  normative_status: normative
+  source_refs:
+  - §12 Workflow and State Transitions
+  related_terms:
+  - S0 STARTUP_READONLY
+  - S1 SNAPSHOT_LOCKED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TR-002
+  preferred_label: snapshot_locked
+  category: Transition Terms
+  definition_short: Trigger in the transition model from S1 SNAPSHOT_LOCKED to S2 STRUCTURAL_VERIFIED.
+  definition_operational: 'Names the trigger that moves the workflow from S1 SNAPSHOT_LOCKED to S2 STRUCTURAL_VERIFIED when the guard V_SNAPSHOT PASS is satisfied. On failure: S5 FAIL_SAFE.'
+  normative_status: normative
+  source_refs:
+  - §12 Workflow and State Transitions
+  related_terms:
+  - S1 SNAPSHOT_LOCKED
+  - S2 STRUCTURAL_VERIFIED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TR-003
+  preferred_label: structural_checks_done
+  category: Transition Terms
+  definition_short: Trigger in the transition model from S2 STRUCTURAL_VERIFIED to S3 ELIGIBLE_HEAD_SELECTED.
+  definition_operational: 'Names the trigger that moves the workflow from S2 STRUCTURAL_VERIFIED to S3 ELIGIBLE_HEAD_SELECTED when the guard V_FRAME..V_SIG PASS is satisfied. On failure: S5 FAIL_SAFE.'
+  normative_status: normative
+  source_refs:
+  - §12 Workflow and State Transitions
+  related_terms:
+  - S2 STRUCTURAL_VERIFIED
+  - S3 ELIGIBLE_HEAD_SELECTED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TR-004
+  preferred_label: eligibility_checks_done
+  category: Transition Terms
+  definition_short: Trigger in the transition model from S3 ELIGIBLE_HEAD_SELECTED to S4 REHYDRATED_VALIDATED.
+  definition_operational: 'Names the trigger that moves the workflow from S3 ELIGIBLE_HEAD_SELECTED to S4 REHYDRATED_VALIDATED when the guard V_FRESHNESS + V_POLICY + V_IRR + V_VISIBILITY PASS is satisfied. On failure: S5 FAIL_SAFE.'
+  normative_status: normative
+  source_refs:
+  - §12 Workflow and State Transitions
+  related_terms:
+  - S3 ELIGIBLE_HEAD_SELECTED
+  - S4 REHYDRATED_VALIDATED
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TR-005
+  preferred_label: rollback_detected
+  category: Transition Terms
+  definition_short: Trigger in the transition model from Any state to S5 FAIL_SAFE.
+  definition_operational: 'Names the trigger that moves the workflow from Any state to S5 FAIL_SAFE when the guard V_ANCHOR or V_COUNTER_CONT FAIL is satisfied. On failure: QUARANTINE + ESCALATE.'
+  normative_status: normative
+  source_refs:
+  - §12 Workflow and State Transitions
+  related_terms:
+  - Any state
+  - S5 FAIL_SAFE
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TR-006
+  preferred_label: wal_replay_needed
+  category: Transition Terms
+  definition_short: Trigger in the transition model from Recovery path to S7 RECOVERY_REPLAY.
+  definition_operational: 'Names the trigger that moves the workflow from Recovery path to S7 RECOVERY_REPLAY when the guard V_WAL_PHASE indicates recovery is satisfied. On failure: S5 FAIL_SAFE.'
+  normative_status: normative
+  source_refs:
+  - §12 Workflow and State Transitions
+  related_terms:
+  - Recovery path
+  - S7 RECOVERY_REPLAY
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - WAL
+  - S7 RECOVERY_REPLAY
+  - recovery_phase
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TR-007
+  preferred_label: recovery_converged
+  category: Transition Terms
+  definition_short: Trigger in the transition model from S7 RECOVERY_REPLAY to S8 READMISSION_PENDING.
+  definition_operational: 'Names the trigger that moves the workflow from S7 RECOVERY_REPLAY to S8 READMISSION_PENDING when the guard No duplicate effects is satisfied. On failure: S5 FAIL_SAFE.'
+  normative_status: normative
+  source_refs:
+  - §12 Workflow and State Transitions
+  related_terms:
+  - S7 RECOVERY_REPLAY
+  - S8 READMISSION_PENDING
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: TR-008
+  preferred_label: authority_release
+  category: Transition Terms
+  definition_short: Trigger in the transition model from S8 READMISSION_PENDING to S0 STARTUP_READONLY.
+  definition_operational: 'Names the trigger that moves the workflow from S8 READMISSION_PENDING to S0 STARTUP_READONLY when the guard Readmission approved is satisfied. On failure: Remain blocked.'
+  normative_status: normative
+  source_refs:
+  - §12 Workflow and State Transitions
+  related_terms:
+  - S8 READMISSION_PENDING
+  - S0 STARTUP_READONLY
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: AB-001
+  preferred_label: WAL
+  category: Abbreviation Terms
+  definition_short: Write-ahead log used for recovery ordering and phase control.
+  definition_operational: Names the write-ahead log whose phase ordering prevails during recovery and whose ambiguity can force QUARANTINE until convergence is proven.
+  normative_status: normative
+  source_refs:
+  - §2 Agent Overview
+  - §4 Input Contract
+  - §7 Ordering and Verification Sequence
+  - §10 Validator Catalogue
+  - §12 Workflow and State Transitions
+  related_terms:
+  - V_WAL_PHASE
+  - recovery_phase
+  - S7 RECOVERY_REPLAY
+  synonyms:
+  - write-ahead log
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - wal_replay_needed
+  - S7 RECOVERY_REPLAY
+  - recovery_phase
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: AB-002
+  preferred_label: MRF-RESTORE-REQ
+  category: Abbreviation Terms
+  definition_short: Machine-readable form for restoration requests.
+  definition_operational: Names the machine-readable restoration request form whose canonical fields are request_id, source_id, requested_head, and policy_profile.
+  normative_status: normative
+  source_refs:
+  - §15 Machine-Readable Forms
+  related_terms:
+  - restoration_request
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: AB-003
+  preferred_label: MRF-VALIDATOR-BUNDLE
+  category: Abbreviation Terms
+  definition_short: Machine-readable form for validator results.
+  definition_operational: Names the machine-readable form that carries validator_id, status, evidence_ref, and timestamp_or_counter.
+  normative_status: normative
+  source_refs:
+  - §15 Machine-Readable Forms
+  related_terms:
+  - validator_bundle_id
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: AB-004
+  preferred_label: MRF-RESTORE-VERDICT
+  category: Abbreviation Terms
+  definition_short: Machine-readable form for the final verdict.
+  definition_operational: Names the machine-readable verdict form whose canonical fields are verdict, verified_head_digest, snapshot_id, and failure_code.
+  normative_status: normative
+  source_refs:
+  - §15 Machine-Readable Forms
+  related_terms:
+  - restoration_verdict
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: AB-005
+  preferred_label: MRF-TOOL-QUARANTINE
+  category: Abbreviation Terms
+  definition_short: Machine-readable form for tool-state isolation.
+  definition_operational: Names the machine-readable form for tool-state isolation whose canonical fields are tool_id, schema_status, allow_status, and quarantine_scope.
+  normative_status: normative
+  source_refs:
+  - §15 Machine-Readable Forms
+  related_terms:
+  - Tool-state
+  - QUARANTINE
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - QUARANTINE
+  - S6 TOOL_QUARANTINE
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: AB-006
+  preferred_label: MRF-READMISSION
+  category: Abbreviation Terms
+  definition_short: Machine-readable form for exit from fail-safe.
+  definition_operational: Names the machine-readable readmission form whose canonical fields are token_id, approver_set, and satisfied_obligations.
+  normative_status: normative
+  source_refs:
+  - §15 Machine-Readable Forms
+  related_terms:
+  - Readmission
+  - readmission_request
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: AB-007
+  preferred_label: MRF-VALIDATION-LOG
+  category: Abbreviation Terms
+  definition_short: Machine-readable form for auditable validation execution.
+  definition_operational: Names the machine-readable validation log whose canonical fields are validation_run_id, test_id, axis, status, evidence_ref, and reviewer.
+  normative_status: normative
+  source_refs:
+  - §15 Machine-Readable Forms
+  related_terms:
+  - validator_bundle_id
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: OP-001
+  preferred_label: Tool-state activation path
+  category: Optionality Terms
+  definition_short: Optional separate gate for tool-state activation.
+  definition_operational: Names an optional feature whose absence leaves conversational restoration valid while tool-state remains inactive.
+  normative_status: implementation_optional
+  source_refs:
+  - §18 Optional Features
+  related_terms:
+  - Tool-state
+  - tool_state_activation
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities:
+  - Tool-state
+  - tool_state_activation
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: OP-002
+  preferred_label: Dual-control readmission
+  category: Optionality Terms
+  definition_short: Policy-dependent but recommended readmission control.
+  definition_operational: Names an optional readmission arrangement that, if absent, requires the readmission rule to be explicitly narrowed.
+  normative_status: implementation_optional
+  source_refs:
+  - §3 Authority Model
+  - §18 Optional Features
+  related_terms:
+  - Readmission
+  - Readmission gate
+  synonyms: []
+  non_synonyms: []
+  usage_constraints: []
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: OP-003
+  preferred_label: Semantic continuity score
+  category: Optionality Terms
+  definition_short: Optional supplementary control for continuity evaluation.
+  definition_operational: Names an optional supplementary control that may not substitute for mandatory validators.
+  normative_status: implementation_optional
+  source_refs:
+  - §18 Optional Features
+  related_terms:
+  - V_CHAIN
+  - V_ANCHOR
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - It may not substitute for mandatory validators.
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true
+- term_id: OP-004
+  preferred_label: Auxiliary indices
+  category: Optionality Terms
+  definition_short: Optional performance-only control.
+  definition_operational: Names optional indices that may exist for performance reasons but do not affect acceptance or restoration.
+  normative_status: implementation_optional
+  source_refs:
+  - §18 Optional Features
+  related_terms:
+  - restoration_request
+  synonyms: []
+  non_synonyms: []
+  usage_constraints:
+  - They do not affect acceptance or restoration.
+  allowed_values: null
+  ambiguities: []
+  examples: []
+  term_attested_in_spec: true
+  public_traceable: true

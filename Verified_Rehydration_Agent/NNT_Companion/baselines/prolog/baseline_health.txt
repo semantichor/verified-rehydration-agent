@@ -1,0 +1,7 @@
+baseline_health {
+  agent_id: AGT-VRA-001
+  paradigm: prolog
+  probe_transition: next_state(s0_startup_readonly, startup_complete, true) = s1_snapshot_locked
+  probe_evidence: eb01.validator_bundle_id = vbundle-0001 (present)
+  verdict_vocabulary: [allow, deny, quarantine, escalate, readmission_pending]
+}

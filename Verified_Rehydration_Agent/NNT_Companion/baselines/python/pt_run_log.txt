@@ -1,0 +1,148 @@
+PT-ID: PT-001
+COMMAND: python "/build/python\baseline.py" transition --state "S0 STARTUP_READONLY" --trigger StartupComplete --validator-passed true
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S0 STARTUP_READONLY", "result_state": "S1 SNAPSHOT_LOCKED", "result_state_name": "S1_SNAPSHOT_LOCKED", "surface": "transition", "trigger": "startup_complete", "validator_passed": true}
+
+PT-ID: PT-002
+COMMAND: python "/build/python\baseline.py" transition --state "S2 STRUCTURAL_VERIFIED" --trigger StructuralChecksDone --validator-passed true
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S2 STRUCTURAL_VERIFIED", "result_state": "S3 ELIGIBLE_HEAD_SELECTED", "result_state_name": "S3_ELIGIBLE_HEAD_SELECTED", "surface": "transition", "trigger": "structural_checks_done", "validator_passed": true}
+
+PT-ID: PT-003
+COMMAND: python "/build/python\baseline.py" transition --state "S3 ELIGIBLE_HEAD_SELECTED" --trigger EligibilityChecksDone --validator-passed true
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S3 ELIGIBLE_HEAD_SELECTED", "result_state": "S4 REHYDRATED_VALIDATED", "result_state_name": "S4_REHYDRATED_VALIDATED", "surface": "transition", "trigger": "eligibility_checks_done", "validator_passed": true}
+
+PT-ID: PT-004
+COMMAND: python "/build/python\baseline.py" transition --state "S2 STRUCTURAL_VERIFIED" --trigger StructuralChecksDone --validator-passed false
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S2 STRUCTURAL_VERIFIED", "result_state": "S5 FAIL_SAFE", "result_state_name": "S5_FAIL_SAFE", "surface": "transition", "trigger": "structural_checks_done", "validator_passed": false}
+
+PT-ID: PT-005
+COMMAND: python "/build/python\baseline.py" transition --state "S2 STRUCTURAL_VERIFIED" --trigger StructuralChecksDone --validator-passed false
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S2 STRUCTURAL_VERIFIED", "result_state": "S5 FAIL_SAFE", "result_state_name": "S5_FAIL_SAFE", "surface": "transition", "trigger": "structural_checks_done", "validator_passed": false}
+
+PT-ID: PT-006
+COMMAND: python "/build/python\baseline.py" transition --state "S2 STRUCTURAL_VERIFIED" --trigger StructuralChecksDone --validator-passed false
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S2 STRUCTURAL_VERIFIED", "result_state": "S5 FAIL_SAFE", "result_state_name": "S5_FAIL_SAFE", "surface": "transition", "trigger": "structural_checks_done", "validator_passed": false}
+
+PT-ID: PT-007
+COMMAND: python "/build/python\baseline.py" transition --state "S2 STRUCTURAL_VERIFIED" --trigger StructuralChecksDone --validator-passed false
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S2 STRUCTURAL_VERIFIED", "result_state": "S5 FAIL_SAFE", "result_state_name": "S5_FAIL_SAFE", "surface": "transition", "trigger": "structural_checks_done", "validator_passed": false}
+
+PT-ID: PT-008
+COMMAND: python "/build/python\baseline.py" transition --state "S3 ELIGIBLE_HEAD_SELECTED" --trigger EligibilityChecksDone --validator-passed false
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S3 ELIGIBLE_HEAD_SELECTED", "result_state": "S5 FAIL_SAFE", "result_state_name": "S5_FAIL_SAFE", "surface": "transition", "trigger": "eligibility_checks_done", "validator_passed": false}
+
+PT-ID: PT-009
+COMMAND: python "/build/python\baseline.py" transition --state "S3 ELIGIBLE_HEAD_SELECTED" --trigger EligibilityChecksDone --validator-passed false
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S3 ELIGIBLE_HEAD_SELECTED", "result_state": "S5 FAIL_SAFE", "result_state_name": "S5_FAIL_SAFE", "surface": "transition", "trigger": "eligibility_checks_done", "validator_passed": false}
+
+PT-ID: PT-010
+COMMAND: python "/build/python\baseline.py" transition --state "S0 STARTUP_READONLY" --trigger StartupComplete --validator-passed false
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S0 STARTUP_READONLY", "result_state": "S5 FAIL_SAFE", "result_state_name": "S5_FAIL_SAFE", "surface": "transition", "trigger": "startup_complete", "validator_passed": false}
+
+PT-ID: PT-011
+COMMAND: python "/build/python\baseline.py" transition --state "S3 ELIGIBLE_HEAD_SELECTED" --trigger RollbackDetected --validator-passed true
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S3 ELIGIBLE_HEAD_SELECTED", "result_state": "S5 FAIL_SAFE", "result_state_name": "S5_FAIL_SAFE", "surface": "transition", "trigger": "rollback_detected", "validator_passed": true}
+
+PT-ID: PT-012
+COMMAND: python "/build/python\baseline.py" transition --state "S5 FAIL_SAFE" --trigger WalReplayNeeded --validator-passed true
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S5 FAIL_SAFE", "result_state": "S7 RECOVERY_REPLAY", "result_state_name": "S7_RECOVERY_REPLAY", "surface": "transition", "trigger": "wal_replay_needed", "validator_passed": true}
+
+PT-ID: PT-013
+COMMAND: python "/build/python\baseline.py" transition --state "S3 ELIGIBLE_HEAD_SELECTED" --trigger ToolStateInvalid --validator-passed true
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S3 ELIGIBLE_HEAD_SELECTED", "result_state": "S6 TOOL_QUARANTINE", "result_state_name": "S6_TOOL_QUARANTINE", "surface": "transition", "trigger": "tool-state invalid", "validator_passed": true}
+
+PT-ID: PT-014
+COMMAND: python "/build/python\baseline.py" transition --state "S3 ELIGIBLE_HEAD_SELECTED" --trigger ToolStateInvalid --validator-passed true
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S3 ELIGIBLE_HEAD_SELECTED", "result_state": "S6 TOOL_QUARANTINE", "result_state_name": "S6_TOOL_QUARANTINE", "surface": "transition", "trigger": "tool-state invalid", "validator_passed": true}
+COMMAND: python "/build/python\baseline.py" transition --state "S3 ELIGIBLE_HEAD_SELECTED" --trigger EligibilityChecksDone --validator-passed true
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S3 ELIGIBLE_HEAD_SELECTED", "result_state": "S4 REHYDRATED_VALIDATED", "result_state_name": "S4_REHYDRATED_VALIDATED", "surface": "transition", "trigger": "eligibility_checks_done", "validator_passed": true}
+
+PT-ID: PT-015
+COMMAND: python "/build/python\baseline.py" transition --state "S6 TOOL_QUARANTINE" --trigger StartupComplete --validator-passed true
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S6 TOOL_QUARANTINE", "result_state": "S6 TOOL_QUARANTINE", "result_state_name": "S6_TOOL_QUARANTINE", "surface": "transition", "trigger": "startup_complete", "validator_passed": true}
+
+PT-ID: PT-016
+COMMAND: python "/build/python\baseline.py" evidence --fixture EB-01
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"failed_validator": "V_CHAIN", "failure_code": "DENY_V_CHAIN", "failure_explanation_producer": "GateLogic", "freshness_value": "0000000000000010", "irr_digest": "sha256:irr-REP-0001", "policy_id": "policy-REP-v1", "snapshot_id": "snap-REP-0001", "source_id": "src-REP-0001", "suppression_status": "suppressed", "tool_activation_status": "inactive", "tool_activation_status_producer": "ToolGate", "validator_bundle_id": "vbundle-REP-0001", "validator_bundle_id_producer": "ExecutionLayer", "verified_head_digest": "sha256:head-REP-0001"}, "fixture": "EB-01", "surface": "evidence"}
+
+PT-ID: PT-017
+COMMAND: python "/build/python\baseline.py" evidence --fixture EB-02
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"failed_validator": "V_FRESHNESS", "failure_code": "DENY_V_FRESHNESS", "failure_explanation_producer": "GateLogic", "freshness_value": "0000000000000010", "irr_digest": "sha256:irr-REP-0001", "policy_id": "policy-REP-v1", "snapshot_id": "snap-REP-0001", "source_id": "src-REP-0001", "suppression_status": "suppressed", "tool_activation_status": "inactive", "tool_activation_status_producer": "ToolGate", "validator_bundle_id": "vbundle-REP-0001", "validator_bundle_id_producer": "ExecutionLayer", "verified_head_digest": "sha256:head-REP-0001"}, "fixture": "EB-02", "surface": "evidence"}
+
+PT-ID: PT-018
+COMMAND: python "/build/python\baseline.py" evidence --fixture EB-03
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"failed_validator": "V_PARSE", "failure_code": "DENY_V_PARSE", "failure_explanation_producer": "GateLogic", "freshness_value": "0000000000000010", "irr_digest": "sha256:irr-REP-0001", "policy_id": "policy-REP-v1", "snapshot_id": "snap-REP-0001", "source_id": "src-REP-0001", "suppression_status": "suppressed", "tool_activation_status": "inactive", "tool_activation_status_producer": "ToolGate", "validator_bundle_id": "vbundle-REP-0001", "validator_bundle_id_producer": "ExecutionLayer", "verified_head_digest": "sha256:head-REP-0001"}, "fixture": "EB-03", "surface": "evidence"}
+
+PT-ID: PT-019
+COMMAND: python "/build/python\baseline.py" evidence --fixture EB-05
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"freshness_value": "0000000000000010", "irr_digest": "sha256:irr-REP-0001", "policy_id": "policy-REP-v1", "recovery_phase": "ANCHOR", "recovery_phase_producer": "V_WAL_PHASE", "snapshot_id": "snap-REP-0001", "source_id": "src-REP-0001", "tool_activation_status": "inactive", "tool_activation_status_producer": "ToolGate", "validator_bundle_id": "vbundle-REP-0001", "validator_bundle_id_producer": "ExecutionLayer", "verified_head_digest": "sha256:head-REP-0001"}, "fixture": "EB-05", "surface": "evidence"}
+
+PT-ID: PT-020
+COMMAND: python "/build/python\baseline.py" evidence --fixture EB-06
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"freshness_value": "0000000000000010", "irr_digest": "sha256:irr-REP-0001", "policy_id": "policy-REP-v1", "readmission_token_id": "rtok-REP-0001", "snapshot_id": "snap-REP-0001", "source_id": "src-REP-0001", "tool_activation_status": "inactive", "tool_activation_status_producer": "ToolGate", "validator_bundle_id": "vbundle-REP-0001", "validator_bundle_id_producer": "ExecutionLayer", "verified_head_digest": "sha256:head-REP-0001"}, "fixture": "EB-06", "surface": "evidence"}
+
+PT-ID: PT-021
+COMMAND: python "/build/python\baseline.py" evidence --fixture EB-04
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"failed_validator": "V_FRAME", "failure_code": "DENY_V_FRAME", "failure_explanation_producer": "GateLogic", "freshness_value": "0000000000000010", "irr_digest": "sha256:irr-REP-0001", "policy_id": "policy-REP-v1", "snapshot_id": "snap-REP-0001", "source_id": "src-REP-0001", "suppression_status": "suppressed", "tool_activation_status": "inactive", "tool_activation_status_producer": "ToolGate", "validator_bundle_id": "vbundle-REP-0001", "validator_bundle_id_producer": "ExecutionLayer", "verified_head_digest": "sha256:head-REP-0001"}, "fixture": "EB-04", "surface": "evidence"}
+
+PT-ID: PT-022
+COMMAND: python "/build/python\baseline.py" taxonomy
+EXIT_CODE: 0
+STDOUT_TAIL: {"state_tags": {"S0_STARTUP_READONLY": "WorkflowState::S0_STARTUP_READONLY", "S1_SNAPSHOT_LOCKED": "WorkflowState::S1_SNAPSHOT_LOCKED", "S2_STRUCTURAL_VERIFIED": "WorkflowState::S2_STRUCTURAL_VERIFIED", "S3_ELIGIBLE_HEAD_SELECTED": "WorkflowState::S3_ELIGIBLE_HEAD_SELECTED", "S4_REHYDRATED_VALIDATED": "WorkflowState::S4_REHYDRATED_VALIDATED", "S5_FAIL_SAFE": "WorkflowState::S5_FAIL_SAFE", "S6_TOOL_QUARANTINE": "WorkflowState::S6_TOOL_QUARANTINE", "S7_RECOVERY_REPLAY": "WorkflowState::S7_RECOVERY_REPLAY", "S8_READMISSION_PENDING": "WorkflowState::S8_READMISSION_PENDING"}, "surface": "taxonomy", "verdict_discriminants": {"ALLOW": 1, "DENY": 2, "ESCALATE": 4, "QUARANTINE": 3, "READMISSION_PENDING": 5}, "verdict_tags": {"ALLOW": "NormativeVerdict::ALLOW", "DENY": "NormativeVerdict::DENY", "ESCALATE": "NormativeVerdict::ESCALATE", "QUARANTINE": "NormativeVerdict::QUARANTINE", "READMISSION_PENDING": "NormativeVerdict::READMISSION_PENDING"}}
+
+PT-ID: PT-023
+COMMAND: python "/build/python\baseline.py" taxonomy
+EXIT_CODE: 0
+STDOUT_TAIL: {"state_tags": {"S0_STARTUP_READONLY": "WorkflowState::S0_STARTUP_READONLY", "S1_SNAPSHOT_LOCKED": "WorkflowState::S1_SNAPSHOT_LOCKED", "S2_STRUCTURAL_VERIFIED": "WorkflowState::S2_STRUCTURAL_VERIFIED", "S3_ELIGIBLE_HEAD_SELECTED": "WorkflowState::S3_ELIGIBLE_HEAD_SELECTED", "S4_REHYDRATED_VALIDATED": "WorkflowState::S4_REHYDRATED_VALIDATED", "S5_FAIL_SAFE": "WorkflowState::S5_FAIL_SAFE", "S6_TOOL_QUARANTINE": "WorkflowState::S6_TOOL_QUARANTINE", "S7_RECOVERY_REPLAY": "WorkflowState::S7_RECOVERY_REPLAY", "S8_READMISSION_PENDING": "WorkflowState::S8_READMISSION_PENDING"}, "surface": "taxonomy", "verdict_discriminants": {"ALLOW": 1, "DENY": 2, "ESCALATE": 4, "QUARANTINE": 3, "READMISSION_PENDING": 5}, "verdict_tags": {"ALLOW": "NormativeVerdict::ALLOW", "DENY": "NormativeVerdict::DENY", "ESCALATE": "NormativeVerdict::ESCALATE", "QUARANTINE": "NormativeVerdict::QUARANTINE", "READMISSION_PENDING": "NormativeVerdict::READMISSION_PENDING"}}
+
+PT-ID: PT-024
+COMMAND: python "/build/python\baseline.py" transition --state "S8 READMISSION_PENDING" --trigger AuthorityRelease --validator-passed true
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S8 READMISSION_PENDING", "result_state": "S0 STARTUP_READONLY", "result_state_name": "S0_STARTUP_READONLY", "surface": "transition", "trigger": "authority_release", "validator_passed": true}
+
+PT-ID: PT-025
+COMMAND: python "/build/python\baseline.py" evidence --fixture EB-02
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"failed_validator": "V_FRESHNESS", "failure_code": "DENY_V_FRESHNESS", "failure_explanation_producer": "GateLogic", "freshness_value": "0000000000000010", "irr_digest": "sha256:irr-REP-0001", "policy_id": "policy-REP-v1", "snapshot_id": "snap-REP-0001", "source_id": "src-REP-0001", "suppression_status": "suppressed", "tool_activation_status": "inactive", "tool_activation_status_producer": "ToolGate", "validator_bundle_id": "vbundle-REP-0001", "validator_bundle_id_producer": "ExecutionLayer", "verified_head_digest": "sha256:head-REP-0001"}, "fixture": "EB-02", "surface": "evidence"}
+
+PT-ID: PT-026
+COMMAND: python "/build/python\baseline.py" evidence --fixture EB-05
+EXIT_CODE: 0
+STDOUT_TAIL: {"bundle": {"freshness_value": "0000000000000010", "irr_digest": "sha256:irr-REP-0001", "policy_id": "policy-REP-v1", "recovery_phase": "ANCHOR", "recovery_phase_producer": "V_WAL_PHASE", "snapshot_id": "snap-REP-0001", "source_id": "src-REP-0001", "tool_activation_status": "inactive", "tool_activation_status_producer": "ToolGate", "validator_bundle_id": "vbundle-REP-0001", "validator_bundle_id_producer": "ExecutionLayer", "verified_head_digest": "sha256:head-REP-0001"}, "fixture": "EB-05", "surface": "evidence"}
+
+PT-ID: PT-027
+COMMAND: python "/build/python\baseline.py" transition --state "S3 ELIGIBLE_HEAD_SELECTED" --trigger ToolStateInvalid --validator-passed true
+EXIT_CODE: 0
+STDOUT_TAIL: {"current_state": "S3 ELIGIBLE_HEAD_SELECTED", "result_state": "S6 TOOL_QUARANTINE", "result_state_name": "S6_TOOL_QUARANTINE", "surface": "transition", "trigger": "tool-state invalid", "validator_passed": true}
+
+PT-ID: PT-028
+COMMAND: (no invocation -- SKIP: declarative/parameterized deployment-substrate boundary, not locally runnable)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PT-029
+COMMAND: (no invocation -- SKIP: declarative/parameterized deployment-substrate boundary, not locally runnable)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+

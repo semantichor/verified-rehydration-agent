@@ -1,0 +1,145 @@
+PT-ID: PT-001
+COMMAND: "swipl" -q -g "run_one('PT-001')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-001 | category=runnable | status=PASS | observed=s1_snapshot_locked
+
+PT-ID: PT-002
+COMMAND: "swipl" -q -g "run_one('PT-002')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-002 | category=runnable | status=PASS | observed=s3_eligible_head_selected
+
+PT-ID: PT-003
+COMMAND: "swipl" -q -g "run_one('PT-003')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-003 | category=runnable | status=PASS | observed=s4_rehydrated_validated
+
+PT-ID: PT-004
+COMMAND: "swipl" -q -g "run_one('PT-004')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-004 | category=runnable | status=PASS | observed=s5_fail_safe
+
+PT-ID: PT-005
+COMMAND: "swipl" -q -g "run_one('PT-005')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-005 | category=runnable | status=PASS | observed=s5_fail_safe
+
+PT-ID: PT-006
+COMMAND: "swipl" -q -g "run_one('PT-006')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-006 | category=runnable | status=PASS | observed=s5_fail_safe
+
+PT-ID: PT-007
+COMMAND: "swipl" -q -g "run_one('PT-007')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-007 | category=runnable | status=PASS | observed=s5_fail_safe
+
+PT-ID: PT-008
+COMMAND: "swipl" -q -g "run_one('PT-008')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-008 | category=runnable | status=PASS | observed=s5_fail_safe
+
+PT-ID: PT-009
+COMMAND: "swipl" -q -g "run_one('PT-009')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-009 | category=runnable | status=PASS | observed=s5_fail_safe
+
+PT-ID: PT-010
+COMMAND: "swipl" -q -g "run_one('PT-010')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-010 | category=runnable | status=PASS | observed=s5_fail_safe
+
+PT-ID: PT-011
+COMMAND: "swipl" -q -g "run_one('PT-011')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-011 | category=runnable | status=PASS | observed=s5_fail_safe
+
+PT-ID: PT-012
+COMMAND: "swipl" -q -g "run_one('PT-012')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-012 | category=runnable | status=PASS | observed=s7_recovery_replay
+
+PT-ID: PT-013
+COMMAND: "swipl" -q -g "run_one('PT-013')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-013 | category=runnable | status=PASS | observed=s6_tool_quarantine
+
+PT-ID: PT-014
+COMMAND: "swipl" -q -g "run_one('PT-014')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-014 | category=runnable | status=PASS | observed=first=s6_tool_quarantine second=s4_rehydrated_validated distinct=true
+
+PT-ID: PT-015
+COMMAND: "swipl" -q -g "run_one('PT-015')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-015 | category=runnable | status=PASS | observed=s6_tool_quarantine
+
+PT-ID: PT-016
+COMMAND: "swipl" -q -g "run_one('PT-016')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-016 | category=runnable | status=PASS | observed=bundle=eb01 [validator_bundle_id=vbundle-0001,verified_head_digest=vhead-0001,snapshot_id=snap-0001]
+
+PT-ID: PT-017
+COMMAND: "swipl" -q -g "run_one('PT-017')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-017 | category=runnable | status=PASS | observed=bundle=eb02 [validator_bundle_id=vbundle-0001,verified_head_digest=vhead-0001,snapshot_id=snap-0001,policy_id=policy-0001,source_id=source-0001,freshness_value=fresh-0001,irr_digest=irr-0001,tool_activation_status=inactive]
+
+PT-ID: PT-018
+COMMAND: "swipl" -q -g "run_one('PT-018')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-018 | category=runnable | status=PASS | observed=bundle=eb03 [failure_code=FC-BLOCK-0001,failed_validator=V_PARSE,suppression_status=suppressed]
+
+PT-ID: PT-019
+COMMAND: "swipl" -q -g "run_one('PT-019')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-019 | category=runnable | status=PASS | observed=bundle=eb05 [recovery_phase=converging,recovery_phase_producer=V_WAL_PHASE]
+
+PT-ID: PT-020
+COMMAND: "swipl" -q -g "run_one('PT-020')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-020 | category=runnable | status=PASS | observed=bundle=eb06 [readmission_token_id=rtok-0001]
+
+PT-ID: PT-021
+COMMAND: "swipl" -q -g "run_one('PT-021')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-021 | category=runnable | status=PASS | observed=[validator_bundle_id_producer=ExecutionLayer,failure_explanation_producer=GateLogic,tool_activation_status_producer=ToolGate]
+
+PT-ID: PT-022
+COMMAND: "swipl" -q -g "run_one('PT-022')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-022 | category=runnable | status=PASS | observed=verdict_tag=NormativeVerdict::Quarantine state_tag=WorkflowState::S6ToolQuarantine
+
+PT-ID: PT-023
+COMMAND: "swipl" -q -g "run_one('PT-023')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-023 | category=runnable | status=PASS | observed=deny=NormativeVerdict::Deny escalate=NormativeVerdict::Escalate quarantine=NormativeVerdict::Quarantine
+
+PT-ID: PT-024
+COMMAND: "swipl" -q -g "run_one('PT-024')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-024 | category=parameterized | status=PASS | observed=declared_result=s1_snapshot_locked admissible_set=[s0_startup_readonly,s1_snapshot_locked]
+
+PT-ID: PT-025
+COMMAND: "swipl" -q -g "run_one('PT-025')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-025 | category=runnable | status=PASS | observed=[freshness_value=fresh-0001,policy_id=policy-0001,failed_validator=V_FRESHNESS]
+
+PT-ID: PT-026
+COMMAND: "swipl" -q -g "run_one('PT-026')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-026 | category=runnable | status=PASS | observed=[recovery_phase=converging,recovery_phase_producer=V_WAL_PHASE]
+
+PT-ID: PT-027
+COMMAND: "swipl" -q -g "run_one('PT-027')" -t halt run_pts.pl
+EXIT_CODE: 0
+STDOUT_TAIL: PT-RESULT id=PT-027 | category=runnable | status=PASS | observed=s6_tool_quarantine
+
+PT-ID: PT-028
+COMMAND: (no invocation -- SKIP: declarative bounded-external obligation V_COMPAT, not locally runnable)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PT-029
+COMMAND: (no invocation -- SKIP: declarative bounded-external obligation V_WRITER_LOCK, not locally runnable)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+

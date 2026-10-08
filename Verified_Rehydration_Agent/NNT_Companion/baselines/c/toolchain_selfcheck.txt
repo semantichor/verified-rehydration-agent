@@ -1,0 +1,7 @@
+
+NNT-c toolchain self-check (reproducibility story)
+- Toolchain: gcc (MSYS2 UCRT64), invoked with the UCRT64 bin directory on PATH.
+- Documented rebuild command (convergent build flags): gcc baseline.c -O3 -s -ffile-prefix-map=<build-root>=/build -o baseline.exe
+- Delivered binary: the frozen evidence binary. Its single embedded build path was neutralized to /build (path-only, byte-length preserved; behavior unchanged — the path is `__FILE__`/panic metadata, not executed logic). A strings inspection of the delivered binary shows no operator build paths embedded (path-clean).
+- Reproducibility mode: BEHAVIORAL. On this Windows host the toolchain is NOT byte-reproducible (PE timestamp / compilation metadata vary across rebuilds). A buyer who rebuilds baseline.c with the documented flags obtains a behaviorally-equivalent binary (it compiles and produces the same Conformance Tests outcomes), not necessarily a byte-identical one. This residual is declared honestly (no over-claim).
+- Anti-tampering: the delivered baseline.exe is hash-attested in the package Manifest; verify with `sha256sum -c`.

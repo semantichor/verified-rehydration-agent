@@ -1,0 +1,7 @@
+op=transition
+input_state=S0 STARTUP_READONLY
+input_trigger=StartupComplete
+validator_passed=true
+result_state_id=S1
+result_state=S1 SNAPSHOT_LOCKED
+verdict_hint=IN_PROGRESS

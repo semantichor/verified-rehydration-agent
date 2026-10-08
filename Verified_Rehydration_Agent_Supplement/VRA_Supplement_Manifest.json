@@ -1,0 +1,96 @@
+{
+  "schema": "vra-supplement-manifest-v1",
+  "artifact_id": "AGT-VRA-001",
+  "vra_package_manifest": {
+    "filename": "Verified_Rehydration_Agent_Manifest.sha256",
+    "sha256": "f97626b2c11dd159ae4f6a4986d76d62e08b13775f06383f7df7d8ef3987ed4f"
+  },
+  "digest_algorithm": "sha256",
+  "files": [
+    {
+      "path": "AE/ae_162.txt",
+      "size_bytes": 324,
+      "sha256": "43c9c6952ea5fde6a93eb07fd961486a2d8e82d935517d2c5b259af88576cb58"
+    },
+    {
+      "path": "AE/vra_ae_sweep.py",
+      "size_bytes": 3362,
+      "sha256": "5e7b60c41a0b5a7f038bb20e54c1493828722b011904c20ea410b50d068fa4d8"
+    },
+    {
+      "path": "AWK/baseline.awk",
+      "size_bytes": 5553,
+      "sha256": "740739ffacead16063edf99234bed5694d963180a53154bf73cca1a15c0a19fa"
+    },
+    {
+      "path": "AWK/pt_run_log.txt",
+      "size_bytes": 961,
+      "sha256": "e5fa5a8ee9d61312c3dcb9c61758f3626ee503ad4b25d456651e49221d4cab22"
+    },
+    {
+      "path": "AWK/run_pts.awk",
+      "size_bytes": 5297,
+      "sha256": "0c1495f691a0447253f5056e67198b827bd4d06f83fde025d5de4535bf0a270d"
+    },
+    {
+      "path": "BF/baseline.bf",
+      "size_bytes": 325431,
+      "sha256": "2c80c7c9aa5a288d42d69c8f9022eb5b9be0c32471236d23b38a908902307235"
+    },
+    {
+      "path": "BF/bf.c",
+      "size_bytes": 772,
+      "sha256": "265969a9d7ce868a0ba156460b1be557f2ced39afb77008a9dd186486e2e61dc"
+    },
+    {
+      "path": "BF/gen_bf.py",
+      "size_bytes": 6806,
+      "sha256": "cd8c571bda238474447d05771bf3cfa64a9e0e1eee57465ed39f04ef01011c1d"
+    },
+    {
+      "path": "LISP/bf_162.txt",
+      "size_bytes": 324,
+      "sha256": "43c9c6952ea5fde6a93eb07fd961486a2d8e82d935517d2c5b259af88576cb58"
+    },
+    {
+      "path": "LISP/lisp_162.txt",
+      "size_bytes": 324,
+      "sha256": "43c9c6952ea5fde6a93eb07fd961486a2d8e82d935517d2c5b259af88576cb58"
+    },
+    {
+      "path": "LISP/rust_162.txt",
+      "size_bytes": 324,
+      "sha256": "43c9c6952ea5fde6a93eb07fd961486a2d8e82d935517d2c5b259af88576cb58"
+    },
+    {
+      "path": "LISP/rust_sweep.rs",
+      "size_bytes": 1092,
+      "sha256": "a0ed7700a4cf6d38df11a937d67fda28ba5d59271f06f0c349f8493522922ac0"
+    },
+    {
+      "path": "LISP/spec_162.txt",
+      "size_bytes": 324,
+      "sha256": "43c9c6952ea5fde6a93eb07fd961486a2d8e82d935517d2c5b259af88576cb58"
+    },
+    {
+      "path": "LISP/vra_sec12.lisp",
+      "size_bytes": 5010,
+      "sha256": "7b99c4e4acfebbb4ed4c35bb04b8285c4f588e6037dffc0e9623f8e706fe758f"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 7275,
+      "sha256": "45ff711976f8fa32f7155e313372ae540485f1f18df72a174d4eac19e8ef9227"
+    },
+    {
+      "path": "verify_anchor.py",
+      "size_bytes": 2681,
+      "sha256": "15e949dd8c2ca43a33ca12d87195098a6b98e5fb9f4a94a6dfc380499f0ecf1a"
+    },
+    {
+      "path": "VRA_excel_derivation.xlsx",
+      "size_bytes": 20171,
+      "sha256": "0cd43d68b828686ccf08c5f14338f2c7cc7d5f8f95966b891d2efd2add5ceeda"
+    }
+  ]
+}

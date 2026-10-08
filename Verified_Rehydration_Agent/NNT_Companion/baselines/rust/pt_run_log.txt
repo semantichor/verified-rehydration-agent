@@ -1,0 +1,157 @@
+PT-ID: PT-001
+COMMAND: /build/rust\baseline.exe transition S0 StartupComplete true
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S0 | input_trigger=StartupComplete | validator_passed=true | next_state=S1 | next_state_label=S1 SNAPSHOT_LOCKED | next_state_tag=WorkflowState::S1SnapshotLocked | projected_verdict=IN_PROGRESS | 
+
+PT-ID: PT-002
+COMMAND: /build/rust\baseline.exe transition S2 StructuralChecksDone true
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S2 | input_trigger=StructuralChecksDone | validator_passed=true | next_state=S3 | next_state_label=S3 ELIGIBLE_HEAD_SELECTED | next_state_tag=WorkflowState::S3EligibleHeadSelected | projected_verdict=IN_PROGRESS | 
+
+PT-ID: PT-003
+COMMAND: /build/rust\baseline.exe transition S3 EligibilityChecksDone true
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S3 | input_trigger=EligibilityChecksDone | validator_passed=true | next_state=S4 | next_state_label=S4 REHYDRATED_VALIDATED | next_state_tag=WorkflowState::S4RehydratedValidated | projected_verdict=ALLOW | 
+
+PT-ID: PT-004
+COMMAND: /build/rust\baseline.exe transition S2 StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S2 | input_trigger=StructuralChecksDone | validator_passed=false | next_state=S5 | next_state_label=S5 FAIL_SAFE | next_state_tag=WorkflowState::S5FailSafe | projected_verdict=DENY | 
+
+PT-ID: PT-005
+COMMAND: /build/rust\baseline.exe transition S2 StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S2 | input_trigger=StructuralChecksDone | validator_passed=false | next_state=S5 | next_state_label=S5 FAIL_SAFE | next_state_tag=WorkflowState::S5FailSafe | projected_verdict=DENY | 
+
+PT-ID: PT-006
+COMMAND: /build/rust\baseline.exe transition S2 StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S2 | input_trigger=StructuralChecksDone | validator_passed=false | next_state=S5 | next_state_label=S5 FAIL_SAFE | next_state_tag=WorkflowState::S5FailSafe | projected_verdict=DENY | 
+
+PT-ID: PT-007
+COMMAND: /build/rust\baseline.exe transition S2 StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S2 | input_trigger=StructuralChecksDone | validator_passed=false | next_state=S5 | next_state_label=S5 FAIL_SAFE | next_state_tag=WorkflowState::S5FailSafe | projected_verdict=DENY | 
+
+PT-ID: PT-008
+COMMAND: /build/rust\baseline.exe transition S3 EligibilityChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S3 | input_trigger=EligibilityChecksDone | validator_passed=false | next_state=S5 | next_state_label=S5 FAIL_SAFE | next_state_tag=WorkflowState::S5FailSafe | projected_verdict=DENY | 
+
+PT-ID: PT-009
+COMMAND: /build/rust\baseline.exe transition S3 EligibilityChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S3 | input_trigger=EligibilityChecksDone | validator_passed=false | next_state=S5 | next_state_label=S5 FAIL_SAFE | next_state_tag=WorkflowState::S5FailSafe | projected_verdict=DENY | 
+
+PT-ID: PT-010
+COMMAND: /build/rust\baseline.exe transition S0 StartupComplete false
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S0 | input_trigger=StartupComplete | validator_passed=false | next_state=S5 | next_state_label=S5 FAIL_SAFE | next_state_tag=WorkflowState::S5FailSafe | projected_verdict=DENY | 
+
+PT-ID: PT-011
+COMMAND: /build/rust\baseline.exe transition S3 RollbackDetected true
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S3 | input_trigger=RollbackDetected | validator_passed=true | next_state=S5 | next_state_label=S5 FAIL_SAFE | next_state_tag=WorkflowState::S5FailSafe | projected_verdict=DENY | 
+
+PT-ID: PT-012
+COMMAND: /build/rust\baseline.exe transition S5 WalReplayNeeded true
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S5 | input_trigger=WalReplayNeeded | validator_passed=true | next_state=S7 | next_state_label=S7 RECOVERY_REPLAY | next_state_tag=WorkflowState::S7RecoveryReplay | projected_verdict=IN_PROGRESS | 
+
+PT-ID: PT-013
+COMMAND: /build/rust\baseline.exe transition S3 ToolStateInvalid true
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S3 | input_trigger=ToolStateInvalid | validator_passed=true | next_state=S6 | next_state_label=S6 TOOL_QUARANTINE | next_state_tag=WorkflowState::S6ToolQuarantine | projected_verdict=QUARANTINE | 
+
+PT-ID: PT-014
+COMMAND: /build/rust\baseline.exe transition S3 ToolStateInvalid true
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S3 | input_trigger=ToolStateInvalid | validator_passed=true | next_state=S6 | next_state_label=S6 TOOL_QUARANTINE | next_state_tag=WorkflowState::S6ToolQuarantine | projected_verdict=QUARANTINE | 
+COMMAND: /build/rust\baseline.exe transition S3 EligibilityChecksDone true
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S3 | input_trigger=EligibilityChecksDone | validator_passed=true | next_state=S4 | next_state_label=S4 REHYDRATED_VALIDATED | next_state_tag=WorkflowState::S4RehydratedValidated | projected_verdict=ALLOW | 
+
+PT-ID: PT-015
+COMMAND: /build/rust\baseline.exe transition S6 StartupComplete true
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S6 | input_trigger=StartupComplete | validator_passed=true | next_state=S6 | next_state_label=S6 TOOL_QUARANTINE | next_state_tag=WorkflowState::S6ToolQuarantine | projected_verdict=QUARANTINE | 
+
+PT-ID: PT-016
+COMMAND: /build/rust\baseline.exe evidence eb01
+EXIT_CODE: 0
+STDOUT_TAIL: bundle_class=DENY:V_CHAIN | validator_bundle_id=repr-validator_bundle_id-0001 | validator_bundle_id_producer=ExecutionLayer | verified_head_digest=repr-verified_head_digest-0001 | verified_head_digest_producer=V_CHAIN/V_VISIBILITY | snapshot_id=repr-snapshot_id-0001 | snapshot_id_producer=V_SNAPSHOT | policy_id=repr-policy_id-0001 | policy_id_producer=V_POLICY | source_id=repr-source_id-0001 | freshness_value=repr-freshness_value-0001 | source_freshness_producer=V_FRESHNESS | irr_digest=repr-irr_digest-0001 | irr_digest_producer=V_IRR | tool_activation_status=INACTIVE | tool_activation_status_producer=ToolGate | failed_validator=V_CHAIN | failure_code=repr-failure_code-0001 | failure_explanation_producer=GateLogic | suppression_status=SUPPRESSED | 
+
+PT-ID: PT-017
+COMMAND: /build/rust\baseline.exe evidence eb02
+EXIT_CODE: 0
+STDOUT_TAIL: bundle_class=DENY:V_FRESHNESS | validator_bundle_id=repr-validator_bundle_id-0001 | validator_bundle_id_producer=ExecutionLayer | verified_head_digest=repr-verified_head_digest-0001 | verified_head_digest_producer=V_CHAIN/V_VISIBILITY | snapshot_id=repr-snapshot_id-0001 | snapshot_id_producer=V_SNAPSHOT | policy_id=repr-policy_id-0001 | policy_id_producer=V_POLICY | source_id=repr-source_id-0001 | freshness_value=repr-freshness_value-0001 | source_freshness_producer=V_FRESHNESS | irr_digest=repr-irr_digest-0001 | irr_digest_producer=V_IRR | tool_activation_status=INACTIVE | tool_activation_status_producer=ToolGate | failed_validator=V_FRESHNESS | failure_code=repr-failure_code-0001 | failure_explanation_producer=GateLogic | suppression_status=SUPPRESSED | 
+
+PT-ID: PT-018
+COMMAND: /build/rust\baseline.exe evidence eb03
+EXIT_CODE: 0
+STDOUT_TAIL: bundle_class=DENY:V_PARSE | validator_bundle_id=repr-validator_bundle_id-0001 | validator_bundle_id_producer=ExecutionLayer | verified_head_digest=repr-verified_head_digest-0001 | verified_head_digest_producer=V_CHAIN/V_VISIBILITY | snapshot_id=repr-snapshot_id-0001 | snapshot_id_producer=V_SNAPSHOT | policy_id=repr-policy_id-0001 | policy_id_producer=V_POLICY | source_id=repr-source_id-0001 | freshness_value=repr-freshness_value-0001 | source_freshness_producer=V_FRESHNESS | irr_digest=repr-irr_digest-0001 | irr_digest_producer=V_IRR | tool_activation_status=INACTIVE | tool_activation_status_producer=ToolGate | failed_validator=V_PARSE | failure_code=repr-failure_code-0001 | failure_explanation_producer=GateLogic | suppression_status=SUPPRESSED | 
+
+PT-ID: PT-019
+COMMAND: /build/rust\baseline.exe evidence eb05
+EXIT_CODE: 0
+STDOUT_TAIL: bundle_class=QUARANTINE:- | validator_bundle_id=repr-validator_bundle_id-0001 | validator_bundle_id_producer=ExecutionLayer | verified_head_digest=repr-verified_head_digest-0001 | verified_head_digest_producer=V_CHAIN/V_VISIBILITY | snapshot_id=repr-snapshot_id-0001 | snapshot_id_producer=V_SNAPSHOT | policy_id=repr-policy_id-0001 | policy_id_producer=V_POLICY | source_id=repr-source_id-0001 | freshness_value=repr-freshness_value-0001 | source_freshness_producer=V_FRESHNESS | irr_digest=repr-irr_digest-0001 | irr_digest_producer=V_IRR | tool_activation_status=INACTIVE | tool_activation_status_producer=ToolGate | recovery_phase=repr-recovery_phase-0001 | recovery_phase_producer=V_WAL_PHASE | 
+
+PT-ID: PT-020
+COMMAND: /build/rust\baseline.exe evidence eb06
+EXIT_CODE: 0
+STDOUT_TAIL: bundle_class=READMISSION_PENDING:- | validator_bundle_id=repr-validator_bundle_id-0001 | validator_bundle_id_producer=ExecutionLayer | verified_head_digest=repr-verified_head_digest-0001 | verified_head_digest_producer=V_CHAIN/V_VISIBILITY | snapshot_id=repr-snapshot_id-0001 | snapshot_id_producer=V_SNAPSHOT | policy_id=repr-policy_id-0001 | policy_id_producer=V_POLICY | source_id=repr-source_id-0001 | freshness_value=repr-freshness_value-0001 | source_freshness_producer=V_FRESHNESS | irr_digest=repr-irr_digest-0001 | irr_digest_producer=V_IRR | tool_activation_status=INACTIVE | tool_activation_status_producer=ToolGate | readmission_token_id=repr-readmission_token_id-0001 | 
+
+PT-ID: PT-021
+COMMAND: /build/rust\baseline.exe evidence eb04
+EXIT_CODE: 0
+STDOUT_TAIL: bundle_class=DENY:V_FRAME | validator_bundle_id=repr-validator_bundle_id-0001 | validator_bundle_id_producer=ExecutionLayer | verified_head_digest=repr-verified_head_digest-0001 | verified_head_digest_producer=V_CHAIN/V_VISIBILITY | snapshot_id=repr-snapshot_id-0001 | snapshot_id_producer=V_SNAPSHOT | policy_id=repr-policy_id-0001 | policy_id_producer=V_POLICY | source_id=repr-source_id-0001 | freshness_value=repr-freshness_value-0001 | source_freshness_producer=V_FRESHNESS | irr_digest=repr-irr_digest-0001 | irr_digest_producer=V_IRR | tool_activation_status=INACTIVE | tool_activation_status_producer=ToolGate | failed_validator=V_FRAME | failure_code=repr-failure_code-0001 | failure_explanation_producer=GateLogic | suppression_status=SUPPRESSED | 
+
+PT-ID: PT-022
+COMMAND: /build/rust\baseline.exe verdict-tag QUARANTINE
+EXIT_CODE: 0
+STDOUT_TAIL: verdict=QUARANTINE | verdict_tag=NormativeVerdict::Quarantine | 
+COMMAND: /build/rust\baseline.exe state-tag S6
+EXIT_CODE: 0
+STDOUT_TAIL: state=S6 | state_tag=WorkflowState::S6ToolQuarantine | state_label=S6 TOOL_QUARANTINE | 
+
+PT-ID: PT-023
+COMMAND: /build/rust\baseline.exe verdict-tag DENY
+EXIT_CODE: 0
+STDOUT_TAIL: verdict=DENY | verdict_tag=NormativeVerdict::Deny | 
+COMMAND: /build/rust\baseline.exe verdict-tag ESCALATE
+EXIT_CODE: 0
+STDOUT_TAIL: verdict=ESCALATE | verdict_tag=NormativeVerdict::Escalate | 
+COMMAND: /build/rust\baseline.exe verdict-tag QUARANTINE
+EXIT_CODE: 0
+STDOUT_TAIL: verdict=QUARANTINE | verdict_tag=NormativeVerdict::Quarantine | 
+
+PT-ID: PT-024
+COMMAND: /build/rust\baseline.exe transition S8 AuthorityRelease true
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S8 | input_trigger=AuthorityRelease | validator_passed=true | next_state=S1 | next_state_label=S1 SNAPSHOT_LOCKED | next_state_tag=WorkflowState::S1SnapshotLocked | projected_verdict=IN_PROGRESS | 
+
+PT-ID: PT-025
+COMMAND: /build/rust\baseline.exe evidence eb02
+EXIT_CODE: 0
+STDOUT_TAIL: bundle_class=DENY:V_FRESHNESS | validator_bundle_id=repr-validator_bundle_id-0001 | validator_bundle_id_producer=ExecutionLayer | verified_head_digest=repr-verified_head_digest-0001 | verified_head_digest_producer=V_CHAIN/V_VISIBILITY | snapshot_id=repr-snapshot_id-0001 | snapshot_id_producer=V_SNAPSHOT | policy_id=repr-policy_id-0001 | policy_id_producer=V_POLICY | source_id=repr-source_id-0001 | freshness_value=repr-freshness_value-0001 | source_freshness_producer=V_FRESHNESS | irr_digest=repr-irr_digest-0001 | irr_digest_producer=V_IRR | tool_activation_status=INACTIVE | tool_activation_status_producer=ToolGate | failed_validator=V_FRESHNESS | failure_code=repr-failure_code-0001 | failure_explanation_producer=GateLogic | suppression_status=SUPPRESSED | 
+
+PT-ID: PT-026
+COMMAND: /build/rust\baseline.exe evidence eb05
+EXIT_CODE: 0
+STDOUT_TAIL: bundle_class=QUARANTINE:- | validator_bundle_id=repr-validator_bundle_id-0001 | validator_bundle_id_producer=ExecutionLayer | verified_head_digest=repr-verified_head_digest-0001 | verified_head_digest_producer=V_CHAIN/V_VISIBILITY | snapshot_id=repr-snapshot_id-0001 | snapshot_id_producer=V_SNAPSHOT | policy_id=repr-policy_id-0001 | policy_id_producer=V_POLICY | source_id=repr-source_id-0001 | freshness_value=repr-freshness_value-0001 | source_freshness_producer=V_FRESHNESS | irr_digest=repr-irr_digest-0001 | irr_digest_producer=V_IRR | tool_activation_status=INACTIVE | tool_activation_status_producer=ToolGate | recovery_phase=repr-recovery_phase-0001 | recovery_phase_producer=V_WAL_PHASE | 
+
+PT-ID: PT-027
+COMMAND: /build/rust\baseline.exe transition S3 ToolStateInvalid true
+EXIT_CODE: 0
+STDOUT_TAIL: input_state=S3 | input_trigger=ToolStateInvalid | validator_passed=true | next_state=S6 | next_state_label=S6 TOOL_QUARANTINE | next_state_tag=WorkflowState::S6ToolQuarantine | projected_verdict=QUARANTINE | 
+
+PT-ID: PT-028
+COMMAND: (no invocation -- SKIP: declarative bounded-external obligation, not locally runnable)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PT-029
+COMMAND: (no invocation -- SKIP: declarative bounded-external obligation, not locally runnable)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+

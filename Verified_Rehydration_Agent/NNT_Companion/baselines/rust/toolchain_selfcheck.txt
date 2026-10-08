@@ -1,0 +1,7 @@
+
+NNT-rust toolchain self-check (reproducibility story)
+- Toolchain: rustc 1.95.0.
+- Documented rebuild command (convergent build flags): rustc baseline.rs -O -C opt-level=3 -C panic=abort -C strip=symbols -C codegen-units=1 -C metadata=mlf --remap-path-prefix=<build-root>=/build -o baseline.exe
+- Delivered binary: the frozen evidence binary. Its single embedded build path was neutralized to /build (path-only, byte-length preserved; behavior unchanged — the path is `__FILE__`/panic metadata, not executed logic). A strings inspection of the delivered binary shows no operator build paths embedded (path-clean).
+- Reproducibility mode: BEHAVIORAL. On this Windows host the toolchain is NOT byte-reproducible (PE timestamp / compilation metadata vary across rebuilds). A buyer who rebuilds baseline.rs with the documented flags obtains a behaviorally-equivalent binary (it compiles and produces the same Conformance Tests outcomes), not necessarily a byte-identical one. This residual is declared honestly (no over-claim).
+- Anti-tampering: the delivered baseline.exe is hash-attested in the package Manifest; verify with `sha256sum -c`.

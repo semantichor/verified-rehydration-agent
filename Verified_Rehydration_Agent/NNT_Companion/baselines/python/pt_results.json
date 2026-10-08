@@ -1,0 +1,190 @@
+{
+  "agent_id": "AGT-VRA-001",
+  "lang": "python",
+  "test_run_timestamp_utc": "2026-09-18T08:03:28.152395+00:00",
+  "execution_mode": "live",
+  "protocol": "buyer-conformance",
+  "totals": {
+    "total": 29,
+    "pass": 27,
+    "fail": 0,
+    "skip": 2,
+    "error": 0
+  },
+  "results": [
+    {
+      "id": "PT-001",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "result_state='S1 SNAPSHOT_LOCKED' expected='S1 SNAPSHOT_LOCKED'"
+    },
+    {
+      "id": "PT-002",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "result_state='S3 ELIGIBLE_HEAD_SELECTED' expected='S3 ELIGIBLE_HEAD_SELECTED'"
+    },
+    {
+      "id": "PT-003",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "result_state='S4 REHYDRATED_VALIDATED' expected='S4 REHYDRATED_VALIDATED'"
+    },
+    {
+      "id": "PT-004",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "result_state='S5 FAIL_SAFE' expected='S5 FAIL_SAFE'"
+    },
+    {
+      "id": "PT-005",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "result_state='S5 FAIL_SAFE' expected='S5 FAIL_SAFE'"
+    },
+    {
+      "id": "PT-006",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "result_state='S5 FAIL_SAFE' expected='S5 FAIL_SAFE'"
+    },
+    {
+      "id": "PT-007",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "result_state='S5 FAIL_SAFE' expected='S5 FAIL_SAFE'"
+    },
+    {
+      "id": "PT-008",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "result_state='S5 FAIL_SAFE' expected='S5 FAIL_SAFE'"
+    },
+    {
+      "id": "PT-009",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "result_state='S5 FAIL_SAFE' expected='S5 FAIL_SAFE'"
+    },
+    {
+      "id": "PT-010",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "result_state='S5 FAIL_SAFE' expected='S5 FAIL_SAFE'"
+    },
+    {
+      "id": "PT-011",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "result_state='S5 FAIL_SAFE' expected='S5 FAIL_SAFE'"
+    },
+    {
+      "id": "PT-012",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "result_state='S7 RECOVERY_REPLAY' expected='S7 RECOVERY_REPLAY'"
+    },
+    {
+      "id": "PT-013",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "result_state='S6 TOOL_QUARANTINE' expected='S6 TOOL_QUARANTINE'"
+    },
+    {
+      "id": "PT-014",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "(a)='S6 TOOL_QUARANTINE' (b)='S4 REHYDRATED_VALIDATED' distinct=True"
+    },
+    {
+      "id": "PT-015",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "result_state='S6 TOOL_QUARANTINE' expected='S6 TOOL_QUARANTINE'"
+    },
+    {
+      "id": "PT-016",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "present+non-empty: ['validator_bundle_id', 'verified_head_digest', 'snapshot_id']"
+    },
+    {
+      "id": "PT-017",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "present+non-empty: ['validator_bundle_id', 'verified_head_digest', 'snapshot_id', 'policy_id', 'source_id', 'freshness_value', 'irr_digest', 'tool_activation_status']"
+    },
+    {
+      "id": "PT-018",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "present: ['failure_code', 'failed_validator', 'suppression_status']"
+    },
+    {
+      "id": "PT-019",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "present: ['recovery_phase', 'recovery_phase_producer']"
+    },
+    {
+      "id": "PT-020",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "present: ['readmission_token_id']"
+    },
+    {
+      "id": "PT-021",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "producers ok: {'validator_bundle_id_producer': 'ExecutionLayer', 'failure_explanation_producer': 'GateLogic', 'tool_activation_status_producer': 'ToolGate'}"
+    },
+    {
+      "id": "PT-022",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "verdict_tag='NormativeVerdict::QUARANTINE' state_tag='WorkflowState::S6_TOOL_QUARANTINE' distinct=True"
+    },
+    {
+      "id": "PT-023",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "discriminants DENY/ESCALATE/QUARANTINE=[2, 4, 3] pairwise_distinct=True"
+    },
+    {
+      "id": "PT-024",
+      "category": "parameterized",
+      "status": "PASS",
+      "notes": "declared envelope {S0 STARTUP_READONLY, S1 SNAPSHOT_LOCKED} per spec 12 / OR-20; result_state='S0 STARTUP_READONLY' in declared envelope ['S0 STARTUP_READONLY', 'S1 SNAPSHOT_LOCKED']"
+    },
+    {
+      "id": "PT-025",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "present+non-empty: ['freshness_value', 'policy_id']; failed_validator='V_FRESHNESS' (expect V_FRESHNESS)"
+    },
+    {
+      "id": "PT-026",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "present: ['recovery_phase']; recovery_phase_producer='V_WAL_PHASE' (expect V_WAL_PHASE)"
+    },
+    {
+      "id": "PT-027",
+      "category": "runnable",
+      "status": "PASS",
+      "notes": "result_state='S6 TOOL_QUARANTINE' expected='S6 TOOL_QUARANTINE'"
+    },
+    {
+      "id": "PT-028",
+      "category": "declarative",
+      "status": "SKIP",
+      "notes": "SKIP (declarative bounded external): V_COMPAT policy-compatibility enforcement is bounded in import_admissibility / policy subsystem (Conformance Tests 4 Minimal Run Note; spec 16 Deployment obligations 'Local policy bundle'). Buyer obligation proved by architecture evidence: the deployment's local versioned policy bundle binding policy_id, V_POLICY, and V_COMPAT (README 'What your team must produce' #3)."
+    },
+    {
+      "id": "PT-029",
+      "category": "declarative",
+      "status": "SKIP",
+      "notes": "SKIP (declarative bounded external): V_WRITER_LOCK single-writer enforcement is bounded in the persistence control plane / deployment conformance layer (Conformance Tests 4 Minimal Run Note; spec 16 Deployment obligations 'Single-writer enforcement'). Buyer obligation proved by architecture evidence: the deployment's single-writer persistence control plane emitting writer-lock and contention evidence (README 'What your team must produce' #4)."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+PT-001 PASS OR-01
+PT-002 PASS OR-02
+PT-003 PASS OR-03
+PT-004 PASS OR-04
+PT-005 PASS OR-04
+PT-006 PASS OR-04
+PT-007 PASS OR-04
+PT-008 PASS OR-05
+PT-009 PASS OR-05
+PT-010 PASS OR-06
+PT-011 PASS OR-07 any-state rollback
+PT-012 PASS OR-08
+PT-013 PASS OR-09
+PT-014 PASS OR-10 boundary split
+PT-015 PASS OR-11 S6 terminal
+PT-016 PASS closure fields
+PT-017 PASS all unconditional fields
+PT-018 PASS failure explanation
+PT-019 PASS recovery-phase activation
+PT-020 PASS readmission-token activation
+PT-021 PASS producer tags preserved
+PT-022 PASS verdict != state tag
+PT-023 PASS negative verdicts distinct
+PT-024 PASS result in {S0,S1}, got S0 STARTUP_READONLY
+PT-025 PASS cross-ref freshness
+PT-026 PASS cross-ref WAL
+PT-027 PASS S6 directly surfaced
+PT-028 SKIP declarative bounded-external V_COMPAT; not locally runnable by design
+PT-029 SKIP declarative bounded-external V_WRITER_LOCK; not locally runnable by design
+SUMMARY total=29 pass=27 fail=0 skip=2 error=0

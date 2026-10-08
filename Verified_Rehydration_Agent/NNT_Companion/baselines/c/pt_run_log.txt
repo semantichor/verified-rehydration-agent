@@ -1,0 +1,408 @@
+PT-ID: PT-001
+COMMAND: .\baseline.exe transition S0 StartupComplete true
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S0 STARTUP_READONLY
+input_trigger=StartupComplete
+validator_passed=true
+result_state_id=S1
+result_state=S1 SNAPSHOT_LOCKED
+verdict_hint=IN_PROGRESS
+
+
+PT-ID: PT-002
+COMMAND: .\baseline.exe transition S2 StructuralChecksDone true
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S2 STRUCTURAL_VERIFIED
+input_trigger=StructuralChecksDone
+validator_passed=true
+result_state_id=S3
+result_state=S3 ELIGIBLE_HEAD_SELECTED
+verdict_hint=IN_PROGRESS
+
+
+PT-ID: PT-003
+COMMAND: .\baseline.exe transition S3 EligibilityChecksDone true
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S3 ELIGIBLE_HEAD_SELECTED
+input_trigger=EligibilityChecksDone
+validator_passed=true
+result_state_id=S4
+result_state=S4 REHYDRATED_VALIDATED
+verdict_hint=ALLOW
+
+
+PT-ID: PT-004
+COMMAND: .\baseline.exe transition S2 StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S2 STRUCTURAL_VERIFIED
+input_trigger=StructuralChecksDone
+validator_passed=false
+result_state_id=S5
+result_state=S5 FAIL_SAFE
+verdict_hint=DENY
+
+
+PT-ID: PT-005
+COMMAND: .\baseline.exe transition S2 StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S2 STRUCTURAL_VERIFIED
+input_trigger=StructuralChecksDone
+validator_passed=false
+result_state_id=S5
+result_state=S5 FAIL_SAFE
+verdict_hint=DENY
+
+
+PT-ID: PT-006
+COMMAND: .\baseline.exe transition S2 StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S2 STRUCTURAL_VERIFIED
+input_trigger=StructuralChecksDone
+validator_passed=false
+result_state_id=S5
+result_state=S5 FAIL_SAFE
+verdict_hint=DENY
+
+
+PT-ID: PT-007
+COMMAND: .\baseline.exe transition S2 StructuralChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S2 STRUCTURAL_VERIFIED
+input_trigger=StructuralChecksDone
+validator_passed=false
+result_state_id=S5
+result_state=S5 FAIL_SAFE
+verdict_hint=DENY
+
+
+PT-ID: PT-008
+COMMAND: .\baseline.exe transition S3 EligibilityChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S3 ELIGIBLE_HEAD_SELECTED
+input_trigger=EligibilityChecksDone
+validator_passed=false
+result_state_id=S5
+result_state=S5 FAIL_SAFE
+verdict_hint=DENY
+
+
+PT-ID: PT-009
+COMMAND: .\baseline.exe transition S3 EligibilityChecksDone false
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S3 ELIGIBLE_HEAD_SELECTED
+input_trigger=EligibilityChecksDone
+validator_passed=false
+result_state_id=S5
+result_state=S5 FAIL_SAFE
+verdict_hint=DENY
+
+
+PT-ID: PT-010
+COMMAND: .\baseline.exe transition S0 StartupComplete false
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S0 STARTUP_READONLY
+input_trigger=StartupComplete
+validator_passed=false
+result_state_id=S5
+result_state=S5 FAIL_SAFE
+verdict_hint=DENY
+
+
+PT-ID: PT-011
+COMMAND: .\baseline.exe transition S3 RollbackDetected true
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S3 ELIGIBLE_HEAD_SELECTED
+input_trigger=RollbackDetected
+validator_passed=true
+result_state_id=S5
+result_state=S5 FAIL_SAFE
+verdict_hint=DENY
+
+
+PT-ID: PT-012
+COMMAND: .\baseline.exe transition S5 WalReplayNeeded true
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S5 FAIL_SAFE
+input_trigger=WalReplayNeeded
+validator_passed=true
+result_state_id=S7
+result_state=S7 RECOVERY_REPLAY
+verdict_hint=QUARANTINE
+
+
+PT-ID: PT-013
+COMMAND: .\baseline.exe transition S3 ToolStateInvalid true
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S3 ELIGIBLE_HEAD_SELECTED
+input_trigger=ToolStateInvalid
+validator_passed=true
+result_state_id=S6
+result_state=S6 TOOL_QUARANTINE
+verdict_hint=QUARANTINE
+
+
+PT-ID: PT-014
+COMMAND: .\baseline.exe transition S3 ToolStateInvalid true
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S3 ELIGIBLE_HEAD_SELECTED
+input_trigger=ToolStateInvalid
+validator_passed=true
+result_state_id=S6
+result_state=S6 TOOL_QUARANTINE
+verdict_hint=QUARANTINE
+
+COMMAND: .\baseline.exe transition S3 EligibilityChecksDone true
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S3 ELIGIBLE_HEAD_SELECTED
+input_trigger=EligibilityChecksDone
+validator_passed=true
+result_state_id=S4
+result_state=S4 REHYDRATED_VALIDATED
+verdict_hint=ALLOW
+
+
+PT-ID: PT-015
+COMMAND: .\baseline.exe transition S6 StartupComplete true
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S6 TOOL_QUARANTINE
+input_trigger=StartupComplete
+validator_passed=true
+result_state_id=S6
+result_state=S6 TOOL_QUARANTINE
+verdict_hint=QUARANTINE
+
+
+PT-ID: PT-016
+COMMAND: .\baseline.exe evidence EB-01
+EXIT_CODE: 0
+STDOUT_TAIL: op=evidence
+fixture=EB-01
+bundle_class=DENY
+validator_bundle_id=VB-0001
+validator_bundle_id_producer=ExecutionLayer
+verified_head_digest=sha256:vh-cafef00d
+accepted_head_digest=sha256:ah-cafef00d
+snapshot_id=SNAP-0001
+policy_id=POL-0001
+source_id=SRC-0001
+freshness_value=42
+irr_digest=sha256:irr-9a9a
+failed_validator=V_CHAIN
+failure_code=FC-DENY-001
+failure_explanation_producer=GateLogic
+suppression_status=suppressed
+tool_activation_status=inactive
+tool_activation_status_producer=ToolGate
+
+
+PT-ID: PT-017
+COMMAND: .\baseline.exe evidence EB-02
+EXIT_CODE: 0
+STDOUT_TAIL: op=evidence
+fixture=EB-02
+bundle_class=DENY
+validator_bundle_id=VB-0001
+validator_bundle_id_producer=ExecutionLayer
+verified_head_digest=sha256:vh-cafef00d
+accepted_head_digest=sha256:ah-cafef00d
+snapshot_id=SNAP-0001
+policy_id=POL-0001
+source_id=SRC-0001
+freshness_value=42
+irr_digest=sha256:irr-9a9a
+failed_validator=V_FRESHNESS
+failure_code=FC-DENY-001
+failure_explanation_producer=GateLogic
+suppression_status=suppressed
+tool_activation_status=inactive
+tool_activation_status_producer=ToolGate
+
+
+PT-ID: PT-018
+COMMAND: .\baseline.exe evidence EB-03
+EXIT_CODE: 0
+STDOUT_TAIL: op=evidence
+fixture=EB-03
+bundle_class=DENY
+validator_bundle_id=VB-0001
+validator_bundle_id_producer=ExecutionLayer
+verified_head_digest=sha256:vh-cafef00d
+accepted_head_digest=sha256:ah-cafef00d
+snapshot_id=SNAP-0001
+policy_id=POL-0001
+source_id=SRC-0001
+freshness_value=42
+irr_digest=sha256:irr-9a9a
+failed_validator=V_PARSE
+failure_code=FC-DENY-001
+failure_explanation_producer=GateLogic
+suppression_status=suppressed
+tool_activation_status=inactive
+tool_activation_status_producer=ToolGate
+
+
+PT-ID: PT-019
+COMMAND: .\baseline.exe evidence EB-05
+EXIT_CODE: 0
+STDOUT_TAIL: op=evidence
+fixture=EB-05
+bundle_class=RECOVERY
+validator_bundle_id=VB-0002
+validator_bundle_id_producer=ExecutionLayer
+snapshot_id=SNAP-0002
+tool_activation_status=inactive
+tool_activation_status_producer=ToolGate
+recovery_phase=converging
+recovery_phase_producer=V_WAL_PHASE
+writer_lock_status=held
+contention_status=none
+
+
+PT-ID: PT-020
+COMMAND: .\baseline.exe evidence EB-06
+EXIT_CODE: 0
+STDOUT_TAIL: op=evidence
+fixture=EB-06
+bundle_class=READMISSION
+validator_bundle_id=VB-0003
+validator_bundle_id_producer=ExecutionLayer
+snapshot_id=SNAP-0003
+tool_activation_status=inactive
+tool_activation_status_producer=ToolGate
+recovery_phase=converged
+recovery_phase_producer=V_WAL_PHASE
+readmission_token_id=RT-0001
+
+
+PT-ID: PT-021
+COMMAND: .\baseline.exe evidence EB-04
+EXIT_CODE: 0
+STDOUT_TAIL: op=evidence
+fixture=EB-04
+bundle_class=DENY
+validator_bundle_id=VB-0001
+validator_bundle_id_producer=ExecutionLayer
+verified_head_digest=sha256:vh-cafef00d
+accepted_head_digest=sha256:ah-cafef00d
+snapshot_id=SNAP-0001
+policy_id=POL-0001
+source_id=SRC-0001
+freshness_value=42
+irr_digest=sha256:irr-9a9a
+failed_validator=V_FRAME
+failure_code=FC-DENY-001
+failure_explanation_producer=GateLogic
+suppression_status=suppressed
+tool_activation_status=inactive
+tool_activation_status_producer=ToolGate
+
+
+PT-ID: PT-022
+COMMAND: .\baseline.exe taxonomy verdict-state
+EXIT_CODE: 0
+STDOUT_TAIL: op=taxonomy
+verdict_tag=NormativeVerdict::QUARANTINE
+state_tag=WorkflowState::S6ToolQuarantine
+distinct=true
+
+
+PT-ID: PT-023
+COMMAND: .\baseline.exe taxonomy negatives
+EXIT_CODE: 0
+STDOUT_TAIL: op=taxonomy
+deny_discriminant=1
+escalate_discriminant=3
+quarantine_discriminant=2
+pairwise_distinct=true
+
+
+PT-ID: PT-024
+COMMAND: .\baseline.exe transition S8 AuthorityRelease true
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S8 READMISSION_PENDING
+input_trigger=AuthorityRelease
+validator_passed=true
+result_state_id=S0
+result_state=S0 STARTUP_READONLY
+verdict_hint=IN_PROGRESS
+
+
+PT-ID: PT-025
+COMMAND: .\baseline.exe evidence EB-02
+EXIT_CODE: 0
+STDOUT_TAIL: op=evidence
+fixture=EB-02
+bundle_class=DENY
+validator_bundle_id=VB-0001
+validator_bundle_id_producer=ExecutionLayer
+verified_head_digest=sha256:vh-cafef00d
+accepted_head_digest=sha256:ah-cafef00d
+snapshot_id=SNAP-0001
+policy_id=POL-0001
+source_id=SRC-0001
+freshness_value=42
+irr_digest=sha256:irr-9a9a
+failed_validator=V_FRESHNESS
+failure_code=FC-DENY-001
+failure_explanation_producer=GateLogic
+suppression_status=suppressed
+tool_activation_status=inactive
+tool_activation_status_producer=ToolGate
+
+
+PT-ID: PT-026
+COMMAND: .\baseline.exe evidence EB-05
+EXIT_CODE: 0
+STDOUT_TAIL: op=evidence
+fixture=EB-05
+bundle_class=RECOVERY
+validator_bundle_id=VB-0002
+validator_bundle_id_producer=ExecutionLayer
+snapshot_id=SNAP-0002
+tool_activation_status=inactive
+tool_activation_status_producer=ToolGate
+recovery_phase=converging
+recovery_phase_producer=V_WAL_PHASE
+writer_lock_status=held
+contention_status=none
+
+
+PT-ID: PT-027
+COMMAND: .\baseline.exe transition S3 ToolStateInvalid true
+EXIT_CODE: 0
+STDOUT_TAIL: op=transition
+input_state=S3 ELIGIBLE_HEAD_SELECTED
+input_trigger=ToolStateInvalid
+validator_passed=true
+result_state_id=S6
+result_state=S6 TOOL_QUARANTINE
+verdict_hint=QUARANTINE
+
+
+PT-ID: PT-028
+COMMAND: (no invocation -- SKIP: declarative bounded external obligation (V_COMPAT), not locally runnable)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+
+PT-ID: PT-029
+COMMAND: (no invocation -- SKIP: declarative bounded external obligation (V_WRITER_LOCK), not locally runnable)
+EXIT_CODE: -1
+STDOUT_TAIL: (not invoked; see pt_results.json notes)
+

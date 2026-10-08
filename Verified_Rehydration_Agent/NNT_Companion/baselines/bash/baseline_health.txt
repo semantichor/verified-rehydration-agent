@@ -1,0 +1,1 @@
+result_state=S1 SNAPSHOT_LOCKED | from_state=S0 STARTUP_READONLY | trigger=STARTUP_COMPLETE | validator_passed=true | rule=S0+STARTUP_COMPLETE/true->S1

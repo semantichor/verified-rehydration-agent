@@ -1,0 +1,7 @@
+input_state=S0
+input_trigger=StartupComplete
+validator_passed=true
+next_state=S1
+next_state_label=S1 SNAPSHOT_LOCKED
+next_state_tag=WorkflowState::S1SnapshotLocked
+projected_verdict=IN_PROGRESS

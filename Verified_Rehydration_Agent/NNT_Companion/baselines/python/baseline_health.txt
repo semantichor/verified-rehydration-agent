@@ -1,0 +1,1 @@
+{"current_state": "S0 STARTUP_READONLY", "result_state": "S1 SNAPSHOT_LOCKED", "result_state_name": "S1_SNAPSHOT_LOCKED", "surface": "transition", "trigger": "startup_complete", "validator_passed": true}
